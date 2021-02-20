@@ -1,0 +1,14 @@
+@font-face {
+  src: url(../../../Resources/fonts/Poppins-SemiBold.ttf);
+  font-family: "Poppins-SemiBold";
+}
+
+.logo h1 {
+  color: white;
+  font-size: 63px;
+  font-family: "Poppins-SemiBold";
+}
+
+.red-simbol {
+  color: #f9314b;
+}
