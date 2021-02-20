@@ -1,6 +1,19 @@
-h1 {
-    color:red;
+@font-face {
+  src: url(../../Resources/fonts/UTM\ Bitsumishi\ Pro.ttf);
+  font-family: "Bitsumishi";
 }
-h2{
-    color: blue;
+
+.play-button {
+  text-align: center;
+}
+
+.play-button button {
+  font-family: "Bitsumishi";
+  font-size: 60px;
+  padding: 10px 80px;
+  color: #fff;
+  background-image: linear-gradient(to right, #c9293d, #fd334c);
+  border: 0;
+  border-radius: 30px;
+  letter-spacing: 4px;
 }
