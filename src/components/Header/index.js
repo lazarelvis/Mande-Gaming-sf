@@ -5,10 +5,10 @@ const Header = () => {
     return ( 
         <> 
         
-        <div class="navbar-button">
+        <div className="navbar-button">
             <a href="#">Join Us</a>
         </div>
-        <div class="navbar">
+        <div className="navbar">
             <ul>
                 <li><a href="#">Leaderboard</a></li>
                 <li><a href="#">Gaming</a></li>
