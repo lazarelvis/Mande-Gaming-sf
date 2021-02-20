@@ -3,7 +3,7 @@ function Home() {
   return (
     <>
     <div className="play-button">
-      <button type="button">PLAY</button>
+      <button type="button">play</button>
     </div>
     </>
   );
