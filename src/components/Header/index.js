@@ -11,8 +11,8 @@ const Header = () => {
         <div className="navbar">
             <ul>
                 <li><a href="#">Leaderboard</a></li>
-                <li><a href="#">Gaming</a></li>
-                <li><a href="#">Home</a></li>
+                <li><a href="/game-list">Gaming</a></li>
+                <li><a href="/">Home</a></li>
             </ul>
         </div>
         <div>
