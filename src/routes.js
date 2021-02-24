@@ -3,13 +3,15 @@ import {Switch, Route} from "react-router-dom"
 
 import Home from './components/Home'
 import Layout from './hoc/layout'
+import GameList from './components/Game-list'
 
 
 const Routes = () => {
     return ( 
         <Layout>
             <Switch>
-                    <Route
+                    <Route exact path="/game-list" component={GameList} />
+                    <Route exact
                         path="/"
                         component={Home}
                         />
