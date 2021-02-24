@@ -1,0 +1,23 @@
+.formBlock .label_inputs {
+  font-size: 20px;
+  font-family: 'OpenSans-SemiBold';
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.formBlock {
+  padding: 8px 0;
+}
+.formBlock input {
+  width: 100%;
+  padding: 10px 0px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #9297ac;
+}
+.formBlock input::placeholder {
+  color: #9297ac;
+  font-size: 16px;
+  font-family: 'OpenSans-Regular';
+}

@@ -1,6 +1,6 @@
 @font-face {
   src: url(../../../Resources/fonts/Poppins-SemiBold.ttf);
-  font-family: "Poppins-SemiBold";
+  font-family: 'Poppins-SemiBold';
 }
 
 .logo h1 {
@@ -8,7 +8,7 @@
   margin-left: 100px;
   color: white;
   font-size: 55px;
-  font-family: "Poppins-SemiBold";
+  font-family: 'Poppins-SemiBold';
 }
 
 .red-simbol {
@@ -20,22 +20,22 @@
   text-align: center;
   padding: 14px 27px;
   text-decoration: none;
-  font-family:Bitsumishi ;
+  font-family: Bitsumishi;
   font-size: 25px;
 }
 .navbar li {
   margin-top: 20px;
   float: right;
-}  
+}
 .navbar ul {
   list-style-type: none;
 }
 
-.navbar-button{
+.navbar-button {
   margin-top: 30px;
-  font-family:Bitsumishi ;
+  font-family: Bitsumishi;
   font-size: 25px;
-  background-image: linear-gradient(to right, #C9293D , #FD334C);
+  background-image: linear-gradient(to right, #c9293d, #fd334c);
   color: white;
   float: right;
   padding: 5px 30px;
@@ -43,6 +43,7 @@
   margin-right: 100px;
   margin-left: 27px;
   text-decoration: none;
+  cursor: pointer;
 }
 .navbar-button a {
   text-decoration: none;
