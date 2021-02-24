@@ -5,9 +5,6 @@ import Home from './components/Home';
 import Layout from './hoc/layout';
 import GameList from './components/Game-list';
 
-import Home from './components/Home';
-import Layout from './hoc/layout';
-
 const Routes = () => {
   return (
     <Layout>

@@ -18,7 +18,7 @@ class Header extends Component {
         config: {
           name: 'name_input',
           type: 'text',
-          placeholder: 'Enter your name',
+          placeholder: 'Enter your first name',
           label: 'First Name',
         },
         validation: {
@@ -35,7 +35,7 @@ class Header extends Component {
         config: {
           name: 'lastname_input',
           type: 'text',
-          placeholder: 'Enter your lastname',
+          placeholder: 'Enter your last name',
           label: 'Last Name',
         },
         validation: {
@@ -168,20 +168,6 @@ class Header extends Component {
               </div>
             </form>
           </div>
-          {/* <div className="actions">
-            <Popup
-              trigger={<button className="button"> Trigger </button>}
-              position="top center"
-              nested
-            >
-              <span>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
-                magni omnis delectus nemo, maxime molestiae dolorem numquam
-                mollitia, voluptate ea, accusamus excepturi deleniti ratione
-                sapiente! Laudantium, aperiam doloribus. Odit, aut.
-              </span>
-            </Popup>
-          </div> */}
         </div>
       )}
     </Popup>
