@@ -1,0 +1,109 @@
+@font-face {
+  src: url(../../../Resources/fonts/UTM\ Bitsumishi\ Pro.ttf);
+  font-family: 'Bitsumishi';
+}
+@font-face {
+  src: url(../../../Resources/fonts/OpenSans-Regular.ttf);
+  font-family: 'OpenSans-Regular';
+}
+@font-face {
+  src: url(../../../Resources/fonts/OpenSans-SemiBold.ttf);
+  font-family: 'OpenSans-SemiBold';
+}
+
+.modal {
+  font-size: 12px;
+  padding: 38px;
+}
+.modal > .header {
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+}
+.modal > .square {
+  top: -67px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  position: absolute;
+  width: 135px;
+  height: 135px;
+  border-radius: 50%;
+  background-color: #252f5a;
+  z-index: -1;
+}
+.modal > .content {
+  padding: 10px 5px;
+  padding-top: 40px;
+}
+.modal > .actions {
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+}
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #cfcece;
+}
+
+/* style whote pop up */
+.popup-content {
+  width: 500px !important;
+  background: #252f5a !important;
+  color: white;
+  /* padding: 38px !important ; */
+  border: unset !important;
+  border-radius: 15px;
+}
+
+.modal > .header h1 {
+  font-family: 'OpenSans-SemiBold';
+  font-size: 27px;
+}
+
+.modal > .header h6 {
+  font-family: 'Bitsumishi';
+  font-weight: 400;
+  font-size: 20px;
+  color: #9297ac;
+}
+
+/* style button */
+.container-register-btn {
+  text-align: center;
+  padding-top: 40px;
+}
+.register-button {
+  font-family: Bitsumishi;
+  font-size: 24px;
+  background-image: linear-gradient(to right, #c9293d, #fd334c);
+  color: white;
+  padding: 12px 80px;
+  border-radius: 38px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.register-button {
+  border: 0;
+  font-weight: 300;
+}
+.square .logo-register {
+  width: 72px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+.square h1 {
+  font-size: 35px;
+}
