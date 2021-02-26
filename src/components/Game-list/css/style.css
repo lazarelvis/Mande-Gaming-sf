@@ -1,43 +1,41 @@
-.card-game{
-    position: relative;
+.card-game {
+  position: relative;
 }
-.grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 50px 30px;
-    margin-top: 60px;
-    margin-left: 250px;
-    margin-right: 250px;
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px 30px;
+  margin-top: 60px;
+  margin-left: 250px;
+  margin-right: 250px;
 }
-.card-game img{
-    width: 100%;
-    border-radius: 20px;
-    background-color: #1C294E;
-    padding: 2px;
+.card-game img {
+  width: 100%;
+  border-radius: 20px;
+  background-color: #1c294e;
+  padding: 2px;
 }
 .card-game button {
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    font-family: "Bitsumishi";
-    font-size: 20px;
-    padding: 5px 40px;
-    color: #fff;
-    background-color: #1C294E;
-    border: 0;
-    border-radius: 30px;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  font-family: 'Bitsumishi';
+  font-size: 20px;
+  padding: 5px 40px;
+  color: #fff;
+  background-color: #1c294e;
+  border: 0;
+  border-radius: 30px;
 }
-.card-game:hover button{
-    bottom: 5px;
-    background-image: linear-gradient(to right, #c9293d, #fd334c);
+.card-game:hover button {
+  bottom: 5px;
+  background-image: linear-gradient(to right, #c9293d, #fd334c);
 }
-.card-game:hover img{
-    background-color: red;
-    padding: px;
-    border: 1px solid red;
-    border-radius: 20px;
-    margin-top: -20px;
+.card-game:hover img {
+  background-color: red;
+  border: 1px solid red;
+  border-radius: 20px;
+  margin-top: -20px;
 }
-
