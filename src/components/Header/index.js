@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './css/style.css';
 import './css/styleModal.css';
+import { Link } from 'react-router-dom';
 
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
@@ -180,20 +181,22 @@ class Header extends Component {
         <div className="navbar">
           <ul>
             <li>
-              <a href="/leaderboard">Leaderboard</a>
+              <Link to="/leaderboard">Leaderboard</Link>
             </li>
             <li>
-              <a href="/game-list">Gaming</a>
+              <Link to="/game-list">Gaming</Link>
             </li>
             <li>
-              <a href="/">Home</a>
+              <Link to="/">Home</Link>
             </li>
           </ul>
         </div>
         <div>
           <div className="logo">
             <h1>
-              M<span className="red-simbol">&</span>E
+              <Link to="/">
+                M<span className="red-simbol">&</span>E
+              </Link>
             </h1>
           </div>
         </div>
