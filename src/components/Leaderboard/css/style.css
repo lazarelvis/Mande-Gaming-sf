@@ -5,10 +5,8 @@
     margin: 90px auto;
     font-family: "Bitsumishi";
   }
-
   #table tr:nth-child(even){background-color: rgb(18,27,58,.7) }
   #table tr:nth-child(odd){background-color: rgb(0,18,78,.7) }
-
   #table th{
     background-color: rgb(11,18,46,.8)!important;
     font-size: 30px;
@@ -25,8 +23,6 @@
     padding-top: 15px;
     padding-bottom: 15px;
   }
-
-
   @media screen and (max-width: 1600px) {
     #table{
       margin: 50px auto;

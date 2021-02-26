@@ -1,16 +1,13 @@
 import React from 'react';
 import Row from './row'
+import HeadRow from './headrow'
 import "./css/style.css";
 
  const LeaderBoard = () => {
      return (  
          <>
          <table id="table">
-            <tr>
-                <th style={{textAlign: 'left'}}>User</th>
-                <th style={{textAlign: 'center',paddingLeft:0,paddingRight:90}}>Game</th>
-                <th style={{textAlign: 'right'}}>Score</th>
-            </tr>
+            <HeadRow />
             <Row number="1"nume="Mihai" joc="Metin2" scor="12000" />
             <Row number="2"nume="Elvis" joc="transformice" scor="9000" />
             <Row number="3"nume="Preotul" joc="Tanki" scor="7300" />
