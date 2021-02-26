@@ -10,36 +10,40 @@
   src: url(../../../Resources/fonts/OpenSans-SemiBold.ttf);
   font-family: 'OpenSans-SemiBold';
 }
+@font-face {
+  src: url(../../../Resources/fonts/Poppins-SemiBold.ttf);
+  font-family: 'Poppins-SemiBold';
+}
 
 .modal {
-  font-size: 12px;
-  padding: 38px;
+  font-size: 0.625vw;
+  padding: 1.979vw;
 }
 .modal > .header {
   width: 100%;
-  font-size: 18px;
+  font-size: 0.938vw;
   text-align: center;
-  padding: 5px;
+  padding: 0.26vw;
 }
 .modal > .square {
-  top: -67px;
+  top: -3.49vw;
   left: 0;
   right: 0;
   margin: 0 auto;
   position: absolute;
-  width: 135px;
-  height: 135px;
+  width: 7.031vw;
+  height: 7.031vw;
   border-radius: 50%;
   background-color: #252f5a;
   z-index: -1;
 }
 .modal > .content {
-  padding: 10px 5px;
-  padding-top: 40px;
+  padding: 0.521vw 0.26vw;
+  padding-top: 2.083vw;
 }
 .modal > .actions {
   width: 100%;
-  padding: 10px 5px;
+  padding: 0.521vw 0.26vw;
   margin: auto;
   text-align: center;
 }
@@ -47,50 +51,50 @@
   cursor: pointer;
   position: absolute;
   display: block;
-  padding: 2px 5px;
-  line-height: 20px;
-  right: -10px;
-  top: -10px;
-  font-size: 24px;
+  padding: 0.104vw 0.26vw;
+  line-height: 1.042vw;
+  right: -0.521vw;
+  top: -0.521vw;
+  font-size: 1.25vw;
   background: #ffffff;
-  border-radius: 18px;
+  border-radius: 0.938vw;
   border: 1px solid #cfcece;
 }
 
 /* style whote pop up */
 .popup-content {
-  width: 500px !important;
+  width: 26.042vw !important;
   background: #252f5a !important;
   color: white;
   /* padding: 38px !important ; */
   border: unset !important;
-  border-radius: 15px;
+  border-radius: 0.781vw;
 }
 
 .modal > .header h1 {
   font-family: 'OpenSans-SemiBold';
-  font-size: 27px;
+  font-size: 1.406vw;
 }
 
 .modal > .header h6 {
   font-family: 'Bitsumishi';
   font-weight: 400;
-  font-size: 20px;
+  font-size: 1.042vw;
   color: #9297ac;
 }
 
 /* style button */
 .container-register-btn {
   text-align: center;
-  padding-top: 40px;
+  padding-top: 1.53vw;
 }
 .register-button {
   font-family: Bitsumishi;
-  font-size: 24px;
+  font-size: 1.25vw;
   background-image: linear-gradient(to right, #c9293d, #fd334c);
   color: white;
-  padding: 12px 80px;
-  border-radius: 38px;
+  padding: 0.625vw 4.167vw;
+  border-radius: 1.979vw;
   text-decoration: none;
   cursor: pointer;
 }
@@ -100,10 +104,11 @@
   font-weight: 300;
 }
 .square .logo-register {
-  width: 72px;
+  width: 4.01vw;
   margin: 0 auto;
-  padding-top: 20px;
+  padding-top: 1.042vw;
 }
 .square h1 {
-  font-size: 35px;
+  font-size: 1.771vw;
+  font-family: 'Poppins-SemiBold';
 }
