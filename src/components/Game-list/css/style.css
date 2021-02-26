@@ -39,3 +39,14 @@
   border-radius: 20px;
   margin-top: -20px;
 }
+@media screen and (min-width: 1600px) {
+    .grid{
+        margin-top: 100px;
+        margin-left: 300px;
+        margin-right: 300px;
+    }
+    .card-game button {
+        font-size: 23px;
+        padding: 7px 45px;
+    }
+  }
