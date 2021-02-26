@@ -10,7 +10,12 @@
   font-size: 55px;
   font-family: 'Poppins-SemiBold';
 }
-
+.logo h1 a {
+  color: white;
+}
+.logo h1 a:link {
+  text-decoration: none;
+}
 .red-simbol {
   color: #f9314b;
 }
