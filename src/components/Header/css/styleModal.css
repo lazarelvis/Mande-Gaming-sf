@@ -112,3 +112,20 @@
   font-size: 1.771vw;
   font-family: 'Poppins-SemiBold';
 }
+
+/* style login */
+.bottom-text {
+  font-family: 'Bitsumishi';
+  color: #9297ac;
+  font-size: 1.146vw;
+}
+.bottom-text-sign {
+  font-family: 'Bitsumishi';
+  color: #f9314b;
+  font-size: 1.146vw;
+  cursor: pointer;
+}
+
+.register-btn {
+  margin-bottom: 1.042vw;
+}

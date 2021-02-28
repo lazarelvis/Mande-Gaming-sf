@@ -65,6 +65,23 @@ class Header extends Component {
         validationMessage: '',
         showlabel: true,
       },
+      password: {
+        element: 'input',
+        value: '',
+        config: {
+          name: 'password_input',
+          type: 'password',
+          placeholder: 'Enter your password',
+          label: 'Password',
+        },
+        validation: {
+          required: true,
+        },
+        valid: false,
+        touched: false,
+        validationMessage: '',
+        showlabel: true,
+      },
       game: {
         element: 'input',
         value: '',
@@ -82,96 +99,141 @@ class Header extends Component {
         validationMessage: '',
         showlabel: true,
       },
-      phone: {
-        element: 'input',
-        value: '',
-        config: {
-          name: 'lastname_input',
-          type: 'text',
-          placeholder: 'Enter your number',
-          label: 'no. Phone',
-        },
-        validation: {
-          required: true,
-        },
-        valid: false,
-        touched: false,
-        validationMessage: '',
-        showlabel: true,
-      },
     },
   };
 
   popUpRegiser = () => (
-    <Popup
-      trigger={
-        <div className="navbar-button">
-          <a>Join Us</a>
-        </div>
-      }
-      modal
-      nested
-    >
-      {(close) => (
-        <div className="modal">
-          <div className="square">
-            <div className="logo-register">
-              <h1>
-                M<span className="red-simbol">&</span>E
-              </h1>
-            </div>
+    <div>
+      <Popup
+        trigger={
+          <div className="navbar-button">
+            <a>Join Us</a>
           </div>
-          <button className="close" onClick={close}>
-            &times;
-          </button>
-
-          <div className="header">
-            <h1>GREAT TO HAVE YOU BACK!</h1>
-            <h6>Enter your details below</h6>
-          </div>
-          <div className="content">
-            <form onSubmit={(event) => this.submitForm(event)}>
-              <FormField
-                id={'name'}
-                formdata={this.state.formdata.name}
-                // change={(element) => this.updateForm(element)}
-              />
-              <FormField
-                id={'lastname'}
-                formdata={this.state.formdata.lastname}
-                // change={(element) => this.updateForm(element)}
-              />
-              <FormField
-                id={'email'}
-                formdata={this.state.formdata.email}
-                // change={(element) => this.updateForm(element)}
-              />
-              <FormField
-                id={'game'}
-                formdata={this.state.formdata.game}
-                // change={(element) => this.updateForm(element)}
-              />
-              <FormField
-                id={'phone'}
-                formdata={this.state.formdata.phone}
-                // change={(element) => this.updateForm(element)}
-              />
-              {this.state.formError ? (
-                <div className="error_label">Please check your data</div>
-              ) : null}
-              <div className="container-register-btn">
-                <button
-                  className="register-button"
-                  onClick={(event) => this.submitForm(event)}
-                >
-                  GET STARTED
-                </button>
+        }
+        modal
+        nested
+      >
+        {(close) => (
+          <div className="modal">
+            <div className="square">
+              <div className="logo-register">
+                <h1>
+                  M<span className="red-simbol">&</span>E
+                </h1>
               </div>
-            </form>
+            </div>
+            <button className="close" onClick={close}>
+              &times;
+            </button>
+
+            <div className="header">
+              <h1>LOGIN</h1>
+              <h6>Enter your details below</h6>
+            </div>
+            <div className="content">
+              <form onSubmit={(event) => this.submitForm(event)}>
+                <FormField
+                  id={'email'}
+                  formdata={this.state.formdata.email}
+                  // change={(element) => this.updateForm(element)}
+                />
+                <FormField
+                  id={'password'}
+                  formdata={this.state.formdata.password}
+                  // change={(element) => this.updateForm(element)}
+                />
+                {this.state.formError ? (
+                  <div className="error_label">Please check your data</div>
+                ) : null}
+                <div className="container-register-btn register-btn">
+                  <button
+                    className="register-button"
+                    onClick={(event) => this.submitForm(event)}
+                  >
+                    LOGIN
+                  </button>
+                </div>
+              </form>
+            </div>
+            <span className="bottom-text">Don't have an account yet? </span>
+
+            <Popup
+              trigger={
+                // <div className="navbar-button">
+                //   <a>Join Us</a>
+                // </div>
+                <span className="bottom-text-sign">Sign Up</span>
+              }
+              modal
+              nested
+            >
+              {(close) => (
+                <div className="modal">
+                  <div className="square">
+                    <div className="logo-register">
+                      <h1>
+                        M<span className="red-simbol">&</span>E
+                      </h1>
+                    </div>
+                  </div>
+                  <button className="close" onClick={close}>
+                    &times;
+                  </button>
+
+                  <div className="header">
+                    <h1>GREAT TO HAVE YOU BACK!</h1>
+                    <h6>Enter your details below</h6>
+                  </div>
+                  <div className="content">
+                    <form onSubmit={(event) => this.submitForm(event)}>
+                      <FormField
+                        id={'name'}
+                        formdata={this.state.formdata.name}
+                        // change={(element) => this.updateForm(element)}
+                      />
+                      <FormField
+                        id={'lastname'}
+                        formdata={this.state.formdata.lastname}
+                        // change={(element) => this.updateForm(element)}
+                      />
+                      <FormField
+                        id={'email'}
+                        formdata={this.state.formdata.email}
+                        // change={(element) => this.updateForm(element)}
+                      />
+                      <FormField
+                        id={'password'}
+                        formdata={this.state.formdata.password}
+                        // change={(element) => this.updateForm(element)}
+                      />
+                      <FormField
+                        id={'game'}
+                        formdata={this.state.formdata.game}
+                        // change={(element) => this.updateForm(element)}
+                      />
+
+                      {this.state.formError ? (
+                        <div className="error_label">
+                          Please check your data
+                        </div>
+                      ) : null}
+                      <div className="container-register-btn">
+                        <button
+                          className="register-button"
+                          onClick={(event) => this.submitForm(event)}
+                        >
+                          GET STARTED
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              )}
+            </Popup>
           </div>
-        </div>
-      )}
-    </Popup>
+        )}
+      </Popup>
+    </div>
   );
 
   render() {
