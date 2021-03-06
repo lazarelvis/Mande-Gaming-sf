@@ -1,0 +1,152 @@
+@font-face {
+  src: url(../../../Resources/fonts/Poppins-SemiBold.ttf);
+  font-family: 'Poppins-SemiBold';
+}
+@font-face {
+  src: url(../../../Resources/fonts/Poppins-Regular.ttf);
+  font-family: 'Poppins-Regular';
+}
+@font-face {
+  src: url(../../../Resources/fonts/Poppins-Medium.ttf);
+  font-family: 'Poppins-Medium';
+}
+.box-game {
+  text-align: center;
+}
+.bck-tabs {
+  position: relative;
+  padding-bottom: 650px;
+  background-color: #000132;
+}
+
+.circle {
+  position: absolute;
+  top: 287px;
+  left: 84px;
+  width: 83px;
+  height: 83px;
+  border-radius: 50%;
+  background-image: linear-gradient(#f9314b, #000080);
+  opacity: 0.7;
+}
+
+.circle2 {
+  position: absolute;
+  top: 155px;
+  left: 134px;
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  background-image: linear-gradient(#f9314b, #000080);
+  opacity: 0.7;
+  padding: 6px;
+}
+.content-circle {
+  background: #000132;
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+}
+
+.circle3 {
+  position: absolute;
+  top: 108px;
+  right: 0;
+  width: 133px;
+  height: 133px;
+  border-radius: 50%;
+  background-image: linear-gradient(#f9314b, #000080);
+  opacity: 0.7;
+}
+
+.circle4 {
+  position: absolute;
+  top: 312px;
+  right: 136px;
+  width: 77px;
+  height: 77px;
+  border-radius: 50%;
+  background-image: linear-gradient(#f9314b, #000080);
+  opacity: 0.7;
+  padding: 5px;
+}
+
+.content-circle4 {
+  background: #000132;
+  width: 77px;
+  height: 77px;
+  border-radius: 50%;
+}
+
+.circle5 {
+  position: absolute;
+  top: 415px;
+  right: 166px;
+  width: 215px;
+  height: 215px;
+  border-radius: 50%;
+  background-image: linear-gradient(#f9314b, #000080);
+  opacity: 0.7;
+  padding: 5px;
+}
+
+.content-circle5 {
+  background: #000132;
+  width: 215px;
+  height: 215px;
+  border-radius: 50%;
+}
+
+.tabs {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 1246px;
+  background-color: #000080;
+  border-radius: 18px;
+}
+
+.react-tabs .react-tabs__tab {
+  border: unset;
+  padding: 15px 40px;
+}
+.react-tabs .react-tabs__tab-list {
+  font-family: 'Poppins-Medium';
+  font-size: 24px;
+  background: #000037;
+  border-bottom: unset;
+  border-top-right-radius: 18px;
+  border-top-left-radius: 18px;
+}
+.react-tabs .react-tabs__tab--selected {
+  background-color: #000080;
+  color: white;
+  padding: 15px 40px;
+  border-radius: 18px 18px 0 0;
+}
+.react-tabs__tab-panel {
+  padding: 75px;
+}
+/* style tabs */
+.react-tabs {
+  color: white;
+}
+.react-tabs h1 {
+  font-size: 45px;
+  text-transform: uppercase;
+  font-family: 'Poppins-SemiBold';
+}
+.react-tabs h6 {
+  font-size: 25px;
+  color: #9297ac;
+  text-transform: uppercase;
+  font-family: 'Poppins-Regular';
+}
+.react-tabs p {
+  padding-top: 25px;
+  font-size: 25px;
+  color: #9297ac;
+  font-family: 'Poppins-Regular';
+}
