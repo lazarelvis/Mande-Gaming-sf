@@ -1,6 +1,8 @@
 import React from 'react';
 
 import './css/style.css';
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
 
 const Game = () => {
   return (
@@ -30,6 +32,21 @@ const Game = () => {
         </div>
         <div className="circle5">
           <div className="content-circle5"></div>
+        </div>
+        <div className="tabs">
+        <Tabs>
+        <TabList>
+          <Tab>About</Tab>
+          <Tab>Controls</Tab>
+        </TabList>
+
+        <TabPanel>
+          <h1>Any content 1</h1>
+        </TabPanel>
+        <TabPanel>
+          <h1>Any content 2</h1>
+        </TabPanel>
+      </Tabs>
         </div>
       </div>
     </div>
