@@ -1,14 +1,18 @@
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
 }
-@font-face{
-    src: url(../../Resources/fonts/UTM\ Bitsumishi\ Pro.ttf);
-    font-family:  Bitsumishi;
+body {
+  background-color: #000132;
 }
-.background-image{
-    background-image: url('../../Resources/images/Home.png');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    height: 100vh;
+@font-face {
+  src: url(../../Resources/fonts/UTM\ Bitsumishi\ Pro.ttf);
+  font-family: Bitsumishi;
+}
+.background-image {
+  background-image: url('../../Resources/images/Home.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100vh;
+  background-color: #000132;
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 
 import './css/style.css';
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 const Game = () => {
   return (
@@ -13,11 +13,11 @@ const Game = () => {
           style={{
             border: '0px',
             backgroundColor: 'rgb(255, 255, 255)',
-            width: '1157px',
-            height: '622px',
+            width: '60.260vw',
+            height: '32.396vw',
             minHeight: ' 100%',
-            margin: '50px',
-            marginBottom: '190px',
+            margin: '2.604vw',
+            marginBottom: '9.896vw',
           }}
         ></iframe>
       </div>
@@ -34,19 +34,19 @@ const Game = () => {
           <div className="content-circle5"></div>
         </div>
         <div className="tabs">
-        <Tabs>
-        <TabList>
-          <Tab>About</Tab>
-          <Tab>Controls</Tab>
-        </TabList>
+          <Tabs>
+            <TabList>
+              <Tab>About</Tab>
+              <Tab>Controls</Tab>
+            </TabList>
 
-        <TabPanel>
-          <h1>Any content 1</h1>
-        </TabPanel>
-        <TabPanel>
-          <h1>Any content 2</h1>
-        </TabPanel>
-      </Tabs>
+            <TabPanel>
+              <h1>Any content 1</h1>
+            </TabPanel>
+            <TabPanel>
+              <h1>Any content 2</h1>
+            </TabPanel>
+          </Tabs>
         </div>
       </div>
     </div>
