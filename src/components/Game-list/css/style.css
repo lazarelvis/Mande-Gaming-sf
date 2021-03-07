@@ -1,52 +1,67 @@
 .card-game {
   position: relative;
 }
+
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 50px 30px;
-  margin-top: 60px;
-  margin-left: 250px;
-  margin-right: 250px;
+  grid-gap: 3.125rem 1.875rem;
+  margin: 3.75rem 15.625rem 0;
 }
+
 .card-game img {
   width: 100%;
   border-radius: 20px;
   background-color: #1c294e;
   padding: 2px;
 }
+
 .card-game button {
+  font-family: 'Bitsumishi';
+  font-size: 20px;
   position: absolute;
   bottom: -10px;
   left: 0;
   right: 0;
   margin: 0 auto;
-  font-family: 'Bitsumishi';
-  font-size: 20px;
   padding: 5px 40px;
   color: #fff;
   background-color: #1c294e;
   border: 0;
   border-radius: 30px;
 }
+
 .card-game:hover button {
   bottom: 5px;
   background-image: linear-gradient(to right, #c9293d, #fd334c);
 }
+
 .card-game:hover img {
-  background-color: red;
-  border: 1px solid red;
+  background-color: #F9314B;
+  border: 1px solid #F9314B;
   border-radius: 20px;
   margin-top: -20px;
 }
+
 @media screen and (min-width: 1600px) {
-    .grid{
-        margin-top: 100px;
-        margin-left: 300px;
-        margin-right: 300px;
-    }
-    .card-game button {
-        font-size: 23px;
-        padding: 7px 45px;
-    }
+  .grid{
+    margin: 6.25rem 18.75rem 0;
   }
+  .card-game button {
+    font-size: 23px;
+    padding: 7px 45px;
+  }
+}
+
+@media screen and (max-width: 1226px) {
+  .grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 1226px) and  (max-width: 1400px){
+  .grid{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+

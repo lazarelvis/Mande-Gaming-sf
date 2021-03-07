@@ -1,31 +1,34 @@
- #table{
-   color: white;
-    width: 67%;
-    border-collapse: collapse;
-    margin: 90px auto;
-    font-family: "Bitsumishi";
+#table {
+  font-family: "Bitsumishi";
+  color: white;
+  width: 67%;
+  border-collapse: collapse;
+  margin: 5.625rem auto;
+}
+
+#table tr:nth-child(even) {
+  background-color: rgb(18,27,58,.7) 
+}
+
+#table tr:nth-child(odd) {
+  background-color: rgb(0,18,78,.7) 
+}
+
+#table th {
+  background-color: rgb(11,18,46,.8)!important;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 0.94rem 1.87rem 0.94rem;
+}
+
+#table td {
+  font-size: 25px;
+  padding: 0.94rem 1.25rem 0.94rem;
+}
+
+@media screen and (max-width: 1600px) {
+  #table{
+    margin: 3.125rem auto;
   }
-  #table tr:nth-child(even){background-color: rgb(18,27,58,.7) }
-  #table tr:nth-child(odd){background-color: rgb(0,18,78,.7) }
-  #table th{
-    background-color: rgb(11,18,46,.8)!important;
-    font-size: 30px;
-    font-weight: 500;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
-  #table td{
-    font-size: 25px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
-  @media screen and (max-width: 1600px) {
-    #table{
-      margin: 50px auto;
-    }
-  }
+}
   

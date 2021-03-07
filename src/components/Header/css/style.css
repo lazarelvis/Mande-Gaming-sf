@@ -4,21 +4,24 @@
 }
 
 .logo h1 {
-  padding-top: 10px;
-  margin-left: 100px;
+  margin: 12px 0 0 100px;
   color: white;
   font-size: 55px;
   font-family: 'Poppins-SemiBold';
 }
+
 .logo h1 a {
   color: white;
 }
+
 .logo h1 a:link {
   text-decoration: none;
 }
+
 .red-simbol {
   color: #f9314b;
 }
+
 .navbar li a {
   display: block;
   color: white;
@@ -28,28 +31,29 @@
   font-family: Bitsumishi;
   font-size: 25px;
 }
+
 .navbar li {
   margin-top: 20px;
   float: right;
 }
+
 .navbar ul {
   list-style-type: none;
 }
 
 .navbar-button {
-  margin-top: 30px;
   font-family: Bitsumishi;
-  font-size: 25px;
+  font-size: 1.7rem;
   background-image: linear-gradient(to right, #c9293d, #fd334c);
   color: white;
   float: right;
   padding: 5px 30px;
   border-radius: 20px;
-  margin-right: 100px;
-  margin-left: 27px;
+  margin: 30px 100px 0 27px;
   text-decoration: none;
   cursor: pointer;
 }
+
 .navbar-button a {
   text-decoration: none;
   color: white;

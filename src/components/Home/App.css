@@ -14,8 +14,8 @@
 
 .play-button button {
   font-family: "Bitsumishi";
-  font-size: 55px;
-  padding: 10px 70px;
+  font-size: 3rem;
+  padding: 0.625rem 4.375rem;
   color: #fff;
   background-image: linear-gradient(to right, #c9293d, #fd334c);
   border: 0;
