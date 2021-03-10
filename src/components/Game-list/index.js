@@ -1,21 +1,18 @@
-import React from 'react';
-import "./css/style.css";
-import GameCard from './game-card';
+import {fetchAllGames} from "../../actions/games";
+import {connect} from "react-redux";
+import GameList from "./Components/index"
 
-const GameList = () => {
-    return (  
-        <>
-        <div className="grid">
-           <GameCard  nume="Play Now" />
-           <GameCard nume ="Play Later"  />
-           <GameCard nume ="Plaido" />
-           <GameCard nume ="Elvis" />
-           <GameCard nume ="Mihai" />
-           <GameCard nume ="I love react" />
-        </div>
-        </>
-    );
-}
- 
-export default GameList;
+const mapStateToProps = (state) => {
+    return {
+        games: state.games
+    };
+};
+
+const mapDispatchToProps = (dispatch) =>({
+    fetchGames: () => {
+        dispatch(fetchAllGames());
+    },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(GameList);
 

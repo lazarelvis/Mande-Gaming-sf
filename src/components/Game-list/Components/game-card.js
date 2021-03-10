@@ -1,5 +1,5 @@
 import React from 'react';
-import gamepic from '../../Resources/images/pig3.jpg';
+import gamepic from '../../../Resources/images/pig3.jpg';
 
 const GameCard = (props) => {
     return ( 
