@@ -4,7 +4,8 @@ import GameList from "./Components/index"
 
 const mapStateToProps = (state) => {
     return {
-        games: state.games
+        games: state.games,
+        users: state.users
     };
 };
 
