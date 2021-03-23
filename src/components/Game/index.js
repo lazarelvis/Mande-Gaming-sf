@@ -1,25 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './css/style.css';
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+import Unity, { UnityContext } from 'react-unity-webgl';
+
+const unityContext = new UnityContext({
+  loaderUrl: './MazeWorriorReact/Build/MazeWorriorReact.loader.js',
+  dataUrl: './MazeWorriorReact/Build/MazeWorriorReact.data',
+  frameworkUrl: './MazeWorriorReact/Build/MazeWorriorReact.framework.js',
+  codeUrl: './MazeWorriorReact/Build/MazeWorriorReact.wasm',
+});
 
 const Game = () => {
+  const [score, setScore] = useState(0);
+  unityContext.on('ShowMessage', (score) => {
+    setScore(score);
+  });
+  console.log('mesaj de la unity cu score:', score);
   return (
     <div>
       <div className="box-game">
-        <iframe
-          src="http://slither.io/?"
-          style={{
-            border: '0px',
-            backgroundColor: 'rgb(255, 255, 255)',
-            width: '1157px',
-            height: '622px',
-            minHeight: ' 100%',
-            margin: '50px',
-            marginBottom: '190px',
-          }}
-        ></iframe>
+        <div style={{ width: '1200px', height: '700px', margin: '0 auto' }}>
+          <Unity unityContext={unityContext} />
+        </div>
       </div>
       <div className="bck-tabs">
         <div className="circle"></div>
@@ -34,19 +38,19 @@ const Game = () => {
           <div className="content-circle5"></div>
         </div>
         <div className="tabs">
-        <Tabs>
-        <TabList>
-          <Tab>About</Tab>
-          <Tab>Controls</Tab>
-        </TabList>
+          <Tabs>
+            <TabList>
+              <Tab>About</Tab>
+              <Tab>Controls</Tab>
+            </TabList>
 
-        <TabPanel>
-          <h1>Any content 1</h1>
-        </TabPanel>
-        <TabPanel>
-          <h1>Any content 2</h1>
-        </TabPanel>
-      </Tabs>
+            <TabPanel>
+              <h1>Any content 1</h1>
+            </TabPanel>
+            <TabPanel>
+              <h1>Any content 2</h1>
+            </TabPanel>
+          </Tabs>
         </div>
       </div>
     </div>

@@ -150,3 +150,8 @@
   color: #9297ac;
   font-family: 'Poppins-Regular';
 }
+
+canvas {
+  width: 1200px;
+  height: 700px;
+}
