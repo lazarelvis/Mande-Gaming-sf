@@ -6,10 +6,10 @@ import 'react-tabs/style/react-tabs.css';
 import Unity, { UnityContext } from 'react-unity-webgl';
 
 const unityContext = new UnityContext({
-  loaderUrl: './MazeWorriorReact/Build/MazeWorriorReact.loader.js',
-  dataUrl: './MazeWorriorReact/Build/MazeWorriorReact.data',
-  frameworkUrl: './MazeWorriorReact/Build/MazeWorriorReact.framework.js',
-  codeUrl: './MazeWorriorReact/Build/MazeWorriorReact.wasm',
+  loaderUrl: './ZombieShooterWebGL/Build/ZombieShooterWebGL.loader.js',
+  dataUrl: './ZombieShooterWebGL/Build/ZombieShooterWebGL.data',
+  frameworkUrl: './ZombieShooterWebGL/Build/ZombieShooterWebGL.framework.js',
+  codeUrl: './ZombieShooterWebGL/Build/ZombieShooterWebGL.wasm',
 });
 
 const Game = () => {
