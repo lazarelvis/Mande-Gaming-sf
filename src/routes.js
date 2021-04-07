@@ -12,6 +12,7 @@ const Routes = () => {
     <Layout>
       <Switch>
         <Route exact path="/game" component={Game} />
+        <Route exact path="/game/:id" component={Game} />
         <Route exact path="/leaderboard" component={LeaderBoard} />
         <Route exact path="/game-list" component={GameList} />
         <Route exact path="/" component={Home} />

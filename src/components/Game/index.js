@@ -4,24 +4,25 @@ import './css/style.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Unity, { UnityContext } from 'react-unity-webgl';
+import { useSelector } from 'react-redux';
 
-const unityContext = new UnityContext({
-  loaderUrl: './ZombieShooterWebGL/Build/ZombieShooterWebGL.loader.js',
-  dataUrl: './ZombieShooterWebGL/Build/ZombieShooterWebGL.data',
-  frameworkUrl: './ZombieShooterWebGL/Build/ZombieShooterWebGL.framework.js',
-  codeUrl: './ZombieShooterWebGL/Build/ZombieShooterWebGL.wasm',
-});
-
-const Game = () => {
+const Game = (props) => {
+  const games = useSelector((state) => state.games);
+  const unityContext = new UnityContext({
+    loaderUrl: `./${props.link}/Build/${props.link}.loader.js`,
+    dataUrl: `./${props.link}/Build/${props.link}.data`,
+    frameworkUrl: `./${props.link}/Build/${props.link}.framework.js`,
+    codeUrl: `./${props.link}/Build/${props.link}.wasm`,
+  });
   const [score, setScore] = useState(0);
   unityContext.on('ShowMessage', (score) => {
     setScore(score);
   });
-  console.log('mesaj de la unity cu score:', score);
+  console.log('mesaj de la unity cu score:', games);
   return (
     <div>
       <div className="box-game">
-        <div style={{ width: '1200px', height: '700px', margin: '0 auto' }}>
+        <div style={{ width: '1200px', height: '800px', margin: '0 auto' }}>
           <Unity unityContext={unityContext} />
         </div>
       </div>
