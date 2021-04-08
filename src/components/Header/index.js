@@ -8,9 +8,8 @@ import 'reactjs-popup/dist/index.css';
 
 import FormField from '../utils/formField';
 
-
-import { fetchAllUsers } from "../../actions/user";
-import { connect } from "react-redux";
+import { fetchAllUsers } from '../../actions/user';
+import { connect } from 'react-redux';
 
 class Header extends Component {
   state = {
@@ -106,7 +105,7 @@ class Header extends Component {
     },
   };
 
-  componentDidMount(){
+  componentDidMount() {
     this.props.fetchUsers();
   }
   popUpRegiser = () => (
@@ -244,7 +243,7 @@ class Header extends Component {
   );
 
   render() {
-    console.log('user in head:',this.props.users);
+    // console.log('user in head:',this.props.users);
     return (
       <>
         {this.popUpRegiser()}
@@ -274,7 +273,6 @@ class Header extends Component {
     );
   }
 }
-
 
 const mapStateToProps = (state) => {
   return {

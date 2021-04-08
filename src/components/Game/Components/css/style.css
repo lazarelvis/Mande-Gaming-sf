@@ -1,13 +1,13 @@
 @font-face {
-  src: url(../../../Resources/fonts/Poppins-SemiBold.ttf);
+  src: url(../../../../Resources/fonts/Poppins-SemiBold.ttf);
   font-family: 'Poppins-SemiBold';
 }
 @font-face {
-  src: url(../../../Resources/fonts/Poppins-Regular.ttf);
+  src: url(../../../../Resources/fonts/Poppins-Regular.ttf);
   font-family: 'Poppins-Regular';
 }
 @font-face {
-  src: url(../../../Resources/fonts/Poppins-Medium.ttf);
+  src: url(../../../../Resources/fonts/Poppins-Medium.ttf);
   font-family: 'Poppins-Medium';
 }
 .box-game {
