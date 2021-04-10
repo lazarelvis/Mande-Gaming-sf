@@ -15,16 +15,6 @@ const Game = ({ fetchGameById, gameById }) => {
   useEffect(() => {
     fetchGameById(urlParam.id);
   }, []);
-  function usePrevious(value) {
-    const ref = useRef();
-    useEffect(() => {
-      ref.current = value;
-    });
-    return ref.current;
-  }
-  useEffect(() => {
-    console.log('in use effect', gameById);
-  }, []);
 
   if (isEmpty(gameById)) {
     return (
@@ -39,6 +29,7 @@ const Game = ({ fetchGameById, gameById }) => {
   }
 
   console.log('gameById', gameById);
+  console.log('score', score);
 
   const unityContext = new UnityContext({
     loaderUrl: `../${gameById[0].link}/Build/${gameById[0].link}.loader.js`,

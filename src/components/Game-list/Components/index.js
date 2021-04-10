@@ -10,7 +10,9 @@ const GameList = ({ fetchGames, games, users }) => {
   //    console.log('users',users);
   const showGameCards = () =>
     games
-      ? games.map((item, i) => <GameCard key={item._id} nume={item.name} />)
+      ? games.map((item, i) => (
+          <GameCard key={item._id} nume={item.name} image={item.image} />
+        ))
       : null;
 
   return (
