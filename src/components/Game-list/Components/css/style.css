@@ -15,6 +15,12 @@
   background-color: #1c294e;
   padding: 2px;
 }
+.card-game video {
+  width: 100%;
+  border-radius: 20px;
+  background-color: #1c294e;
+  padding: 2px;
+}
 
 .card-game button {
   font-family: 'Bitsumishi';

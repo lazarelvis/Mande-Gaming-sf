@@ -40,6 +40,23 @@ const Game = ({ fetchGameById, gameById }) => {
   unityContext.on('ShowMessage', (score) => {
     setScore(score);
   });
+  console.log('data arr', gameById[0].tabs);
+  const tabsData = () => (
+    <Tabs>
+      <TabList>
+        <Tab>About</Tab>
+        <Tab>Controls</Tab>
+      </TabList>
+
+      <TabPanel>
+        <h1>{gameById[0].name}</h1>
+        <h3 className="tabs-description">{gameById[0].tabs[0].description}</h3>
+      </TabPanel>
+      <TabPanel>
+        <h3 className="tabs-description">{gameById[0].tabs[1].description}</h3>
+      </TabPanel>
+    </Tabs>
+  );
 
   return (
     <div>
@@ -60,21 +77,7 @@ const Game = ({ fetchGameById, gameById }) => {
         <div className="circle5">
           <div className="content-circle5"></div>
         </div>
-        <div className="tabs">
-          <Tabs>
-            <TabList>
-              <Tab>About</Tab>
-              <Tab>Controls</Tab>
-            </TabList>
-
-            <TabPanel>
-              <h1>{gameById[0].link}</h1>
-            </TabPanel>
-            <TabPanel>
-              <h1>Any content 2</h1>
-            </TabPanel>
-          </Tabs>
-        </div>
+        <div className="tabs">{tabsData()}</div>
       </div>
     </div>
   );
