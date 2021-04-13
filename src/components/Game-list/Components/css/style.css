@@ -16,6 +16,7 @@
   padding: 2px;
 }
 .card-game video {
+  display: none;
   width: 100%;
   border-radius: 20px;
   background-color: #1c294e;
@@ -38,11 +39,16 @@
 }
 
 .card-game:hover button {
-  bottom: 5px;
+  /* bottom: 5px; */
   background-image: linear-gradient(to right, #c9293d, #fd334c);
 }
 
+.card-game:hover video {
+  display: inline;
+  margin-top: -20px;
+}
 .card-game:hover img {
+  display: none;
   background-color: #f9314b;
   border: 1px solid #f9314b;
   border-radius: 20px;
