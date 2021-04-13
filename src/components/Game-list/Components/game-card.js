@@ -12,6 +12,11 @@ const GameCard = (props) => {
           src={`/CardGamesImages/${props.image ? props.image : 'default.jpg'}`}
           alt={`${props.name}`}
         />
+        {/* <video
+          src="/CardGamesImages/manzeWorriorVideo.mp4"
+          type="video/mp4"
+          controls
+        ></video> */}
         <button type="button">Play Game</button>
       </div>
     </a>
