@@ -5,6 +5,7 @@ import gamepic2 from '../../../Resources/images/imgMazeWorrior.png';
 // import { Link } from 'react-router-dom';
 
 const GameCard = (props) => {
+  console.log('props.video', props);
   return (
     <a href={`/game/${props.nume}`}>
       <div className="card-game">
@@ -13,10 +14,11 @@ const GameCard = (props) => {
           alt={`${props.name}`}
         />
         <video
-          src="/CardGamesImages/test1.mp4"
+          src={`/CardGamesImages/${props.video ? props.video : 'noVideo.mp4'}`}
           type="video/mp4"
-          autoPlay
           loop
+          autoPlay
+          muted
         ></video>
         <button type="button">Play Game</button>
       </div>
