@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
+import Modal from 'react-modal';
 
 import './css/style.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -9,8 +10,36 @@ import Unity, { UnityContext } from 'react-unity-webgl';
 import isEmpty from 'lodash/isEmpty';
 
 const Game = ({ fetchGameById, gameById }) => {
+  let UsernameGenerator = require('username-generator');
+  let username = UsernameGenerator.generateUsername(' ');
+
+  const [user, setUser] = useState();
+
   let urlParam = useParams();
   const [score, setScore] = useState(0);
+  const [modalIsOpen, setIsOpen] = useState(true);
+  // { if (localStorage.getItem('username-mande-gaming') != undefined) {
+  //   useState(true  )
+  // } else {
+  // }}
+  const generateUserNmae = () => {
+    console.log('un user: ', username);
+    setUser(username);
+    localStorage.setItem('username-mande-gaming', username);
+    closeModal();
+  };
+  // if (localStorage.getItem('username-mande-gaming') != undefined) {
+  //   setIsOpen(false);
+  // } else {
+  //   setIsOpen(false);
+  // }
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   useEffect(() => {
     fetchGameById(urlParam.id);
@@ -60,6 +89,17 @@ const Game = ({ fetchGameById, gameById }) => {
 
   return (
     <div>
+      <div>
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          ariaHideApp={false}
+          contentLabel="Example Modal"
+        >
+          <button onClick={generateUserNmae}>Play as Guest</button>
+          <button>Log in</button>
+        </Modal>
+      </div>
       <div className="box-game">
         <div style={{ width: '1200px', height: '800px', margin: '0 auto' }}>
           <Unity unityContext={unityContext} />
