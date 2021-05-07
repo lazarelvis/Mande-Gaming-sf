@@ -13,6 +13,7 @@ import { connect } from 'react-redux';
 
 class Header extends Component {
   state = {
+    username: '',
     formError: false,
     formSuccess: '',
     formdata: {
@@ -242,8 +243,17 @@ class Header extends Component {
     </div>
   );
 
+  componentDidMount() {
+    if (localStorage.getItem('username-mande-gaming') != undefined) {
+      this.setState({
+        username: localStorage.getItem('username-mande-gaming'),
+      });
+    }
+  }
+
   render() {
     // console.log('user in head:',this.props.users);
+    console.log('usrn: ', this.state.username);
     return (
       <>
         {this.popUpRegiser()}
@@ -257,6 +267,11 @@ class Header extends Component {
             </li>
             <li>
               <Link to="/">Home</Link>
+            </li>
+            <li>
+              <h1 style={{ color: '#fff', paddingRight: '200px' }}>
+                {this.state.username}
+              </h1>
             </li>
           </ul>
         </div>

@@ -22,17 +22,20 @@ const Game = ({ fetchGameById, gameById }) => {
   //   useState(true  )
   // } else {
   // }}
+
+  useEffect(() => {
+    if (localStorage.getItem('username-mande-gaming') != undefined) {
+      setIsOpen(false);
+    }
+  }, []);
+
   const generateUserNmae = () => {
     console.log('un user: ', username);
     setUser(username);
     localStorage.setItem('username-mande-gaming', username);
     closeModal();
   };
-  // if (localStorage.getItem('username-mande-gaming') != undefined) {
-  //   setIsOpen(false);
-  // } else {
-  //   setIsOpen(false);
-  // }
+
   function openModal() {
     setIsOpen(true);
   }
