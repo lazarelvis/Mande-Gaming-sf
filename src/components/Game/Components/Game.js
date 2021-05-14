@@ -9,7 +9,13 @@ import 'react-tabs/style/react-tabs.css';
 import Unity, { UnityContext } from 'react-unity-webgl';
 import isEmpty from 'lodash/isEmpty';
 
-const Game = ({ fetchGameById, gameById }) => {
+const Game = ({
+  fetchGameById,
+  gameById,
+  scoreByUsername,
+  fetchScoreByUsername,
+  createScore,
+}) => {
   let UsernameGenerator = require('username-generator');
   let username = UsernameGenerator.generateUsername(' ');
 
@@ -18,6 +24,8 @@ const Game = ({ fetchGameById, gameById }) => {
   let urlParam = useParams();
   const [score, setScore] = useState(0);
   const [modalIsOpen, setIsOpen] = useState(true);
+  const [gameData, setGameData] = useState(0);
+  const newData = { score: 0, username: '' };
   // { if (localStorage.getItem('username-mande-gaming') != undefined) {
   //   useState(true  )
   // } else {
@@ -27,10 +35,24 @@ const Game = ({ fetchGameById, gameById }) => {
     if (localStorage.getItem('username-mande-gaming') != undefined) {
       setIsOpen(false);
     }
+    fetchScoreByUsername('test');
   }, []);
 
+  console.log('scoreByUsername', scoreByUsername);
+  useEffect(() => {
+    // Update the document title using the browser API
+    if (score != 0) {
+      setGameData(score);
+    }
+  });
+
+  newData.score = gameData;
+  newData.username = localStorage.getItem('username-mande-gaming');
+
+  console.log('newData: ', newData);
+  console.log('gameData: ', gameData);
+
   const generateUserNmae = () => {
-    console.log('un user: ', username);
     setUser(username);
     localStorage.setItem('username-mande-gaming', username);
     closeModal();
@@ -60,7 +82,7 @@ const Game = ({ fetchGameById, gameById }) => {
     );
   }
 
-  console.log('gameById', gameById);
+  // console.log('gameById', gameById);
   console.log('score', score);
 
   const unityContext = new UnityContext({
@@ -72,7 +94,36 @@ const Game = ({ fetchGameById, gameById }) => {
   unityContext.on('ShowMessage', (score) => {
     setScore(score);
   });
-  console.log('data arr', gameById[0].tabs);
+
+  // if (score != 0) {
+  //   const objData = {};
+  //   objData = {
+  //     username: username,
+  //     score: score,
+  //   };
+  //   console.log(objData);
+  // }
+  // console.log('data arr', gameById[0].tabs);
+
+  console.log();
+  const userNameToCreate = {
+    username: localStorage.getItem('username-mande-gaming'),
+    score: [
+      {
+        name: urlParam.id,
+        score: score,
+      },
+    ],
+  };
+
+  if (score != 0) {
+    try {
+      createScore(userNameToCreate);
+    } catch (error) {
+      console.log('username deja luat');
+    }
+  }
+
   const tabsData = () => (
     <Tabs>
       <TabList>
@@ -81,7 +132,7 @@ const Game = ({ fetchGameById, gameById }) => {
       </TabList>
 
       <TabPanel>
-        <h1>{gameById[0].name}</h1>
+        <h1>{isEmpty(gameById[0].name)}</h1>
         <h3 className="tabs-description">{gameById[0].tabs[0].description}</h3>
       </TabPanel>
       <TabPanel>
@@ -89,7 +140,7 @@ const Game = ({ fetchGameById, gameById }) => {
       </TabPanel>
     </Tabs>
   );
-
+  // console.log('username game: ', localStorage.getItem('username-mande-gaming'));
   return (
     <div>
       <div>
@@ -103,6 +154,9 @@ const Game = ({ fetchGameById, gameById }) => {
           <button>Log in</button>
         </Modal>
       </div>
+      <h1 style={{ color: '#fff' }}>
+        {localStorage.getItem('username-mande-gaming')}
+      </h1>
       <div className="box-game">
         <div style={{ width: '1200px', height: '800px', margin: '0 auto' }}>
           <Unity unityContext={unityContext} />

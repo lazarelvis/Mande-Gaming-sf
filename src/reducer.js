@@ -15,6 +15,16 @@ const initialState = {
   getGameByIdSuccess: false,
   getGameByIdFailure: false,
   gameByIdFailure: null,
+
+  scoreByUsername: [],
+  getScoreByUsernameSuccess: false,
+  getScoreByUsernameFailure: false,
+  scoreByUsernameFailure: null,
+
+  createScore: [],
+  createScoreSuccess: false,
+  createScoreFailure: false,
+  scoreFailure: null,
 };
 // eslint-disable-next-line
 export default (state = initialState, action) => {
@@ -46,7 +56,6 @@ export default (state = initialState, action) => {
         getGamesFailure: true,
         gamesFailure: action.data,
       });
-
     case t.GET_GAME_BY_ID_SUCCESS:
       return Object.assign({}, state, {
         gameById: action.data,
@@ -60,7 +69,33 @@ export default (state = initialState, action) => {
         getGameByIdFailure: true,
         gameByIdFailure: action.data,
       });
+    case t.GET_SCORE_BY_USERNAME_SUCCESS:
+      return Object.assign({}, state, {
+        scoreByUsername: action.data,
+        getScoreByUsernameSuccess: true,
+        getScoreByUsernameFailure: false,
+      });
+    case t.GET_SCORE_BY_USERNAME_FAILURE:
+      return Object.assign({}, state, {
+        scoreByUsername: null,
+        getScoreByUsernameSuccess: false,
+        getScoreByUsernameFailure: true,
+        scoreByUsernameFailure: action.data,
+      });
 
+    case t.CREATE_SCORE_SUCCESS:
+      return Object.assign({}, state, {
+        createScore: action.data,
+        createScoreSuccess: true,
+        createScoreFailure: false,
+      });
+    case t.CREATE_SCORE_FAILURE:
+      return Object.assign({}, state, {
+        createScore: null,
+        createScoreSuccess: false,
+        createScoreFailure: true,
+        scoreFailure: action.data,
+      });
     default:
       return state;
   }

@@ -5,7 +5,7 @@ import gamepic2 from '../../../Resources/images/imgMazeWorrior.png';
 // import { Link } from 'react-router-dom';
 
 const GameCard = (props) => {
-  console.log('props.video', props);
+  // console.log('props.video', props);
   return (
     <a href={`/game/${props.nume}`}>
       <div className="card-game">

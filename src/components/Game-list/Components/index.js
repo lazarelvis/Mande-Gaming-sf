@@ -7,7 +7,6 @@ const GameList = ({ fetchGames, games, users }) => {
     fetchGames();
   }, []);
   //    console.log('games',games)
-  //    console.log('users',users);
   const showGameCards = () =>
     games
       ? games.map((item, i) => (
