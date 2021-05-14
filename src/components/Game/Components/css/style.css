@@ -160,3 +160,33 @@ canvas {
   font-size: 35px;
   /* font-weight: 500; */
 }
+.ReactModal__Content--after-open
+{
+  padding-top: 50px!important;
+  font-size: 20px;
+  font-family: 'Poppins-Regular' ;
+  background-color: #000132!important;
+  color: white;
+  text-align: center;
+  border: 5px solid #fd334c!important;
+  inset:  140px 310px!important;
+  border-radius: 30px!important;
+}
+.ReactModal__Content--after-open h1
+{
+  margin-bottom: 40px;
+}
+.ReactModal__Content--after-open button
+{
+  font-family: Bitsumishi;
+  font-size: 1.7rem;
+  background-image: linear-gradient(to right, #c9293d, #fd334c);
+  color: white;
+  padding: 5px 30px;
+  border-radius: 20px;
+  border: none;
+  margin-top: 50px;
+  margin-left: 87px;
+  margin-right: 87px;
+  width: 40%;
+}

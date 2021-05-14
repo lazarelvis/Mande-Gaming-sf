@@ -99,8 +99,11 @@ const Game = ({ fetchGameById, gameById }) => {
           ariaHideApp={false}
           contentLabel="Example Modal"
         >
+          <h1>Hold up !</h1>
+          <h2>If you wanna play any game on this platform</h2>
+          <h2>you need to log in first</h2>
           <button onClick={generateUserNmae}>Play as Guest</button>
-          <button>Log in</button>
+          <button style={{marginTop:'20px',width:'20%'}}>Log in</button>
         </Modal>
       </div>
       <div className="box-game">
