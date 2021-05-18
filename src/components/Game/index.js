@@ -1,5 +1,5 @@
 import { fetchGameById } from '../../actions/games';
-import { fetchScoreByUsername } from '../../actions/score';
+import { fetchScoreByUsername, updateScoreData } from '../../actions/score';
 import { createScore } from '../../actions/score';
 
 import { connect } from 'react-redux';
@@ -21,6 +21,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   createScore: (data) => {
     dispatch(createScore(data));
+  },
+  updateScoreData: (id, data) => {
+    dispatch(updateScoreData(id, data));
   },
 });
 

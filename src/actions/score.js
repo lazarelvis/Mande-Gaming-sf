@@ -52,3 +52,29 @@ export const createScore = (data) => (dispatch, getState) => {
       dispatch(sendScoreError(error));
     });
 };
+
+//create username and score
+function updateScore(json) {
+  return {
+    type: t.UPDATE_SCORE_SUCCESS,
+    data: json,
+  };
+}
+
+function updateScoreError(error) {
+  return {
+    type: t.UPDATE_SCORE_FAILURE,
+    error,
+  };
+}
+
+export const updateScoreData = (id, data) => (dispatch, getState) => {
+  return scoreEndpoint
+    .update(id, data)
+    .then((json) => {
+      dispatch(updateScore(json));
+    })
+    .catch((error) => {
+      dispatch(updateScoreError(error));
+    });
+};

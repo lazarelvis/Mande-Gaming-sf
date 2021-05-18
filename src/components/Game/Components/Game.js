@@ -15,6 +15,7 @@ const Game = ({
   scoreByUsername,
   fetchScoreByUsername,
   createScore,
+  updateScoreData,
 }) => {
   let UsernameGenerator = require('username-generator');
   let username = UsernameGenerator.generateUsername(' ');
@@ -35,22 +36,22 @@ const Game = ({
     if (localStorage.getItem('username-mande-gaming') != undefined) {
       setIsOpen(false);
     }
-    fetchScoreByUsername('test');
+    fetchScoreByUsername(localStorage.getItem('username-mande-gaming'));
   }, []);
 
-  console.log('scoreByUsername', scoreByUsername);
+  // console.log('scoreByUsername', scoreByUsername);
   useEffect(() => {
     // Update the document title using the browser API
     if (score != 0) {
       setGameData(score);
     }
-  });
+  }, []);
 
   newData.score = gameData;
   newData.username = localStorage.getItem('username-mande-gaming');
 
-  console.log('newData: ', newData);
-  console.log('gameData: ', gameData);
+  // console.log('newData: ', newData);
+  // console.log('gameData: ', gameData);
 
   const generateUserNmae = () => {
     setUser(username);
@@ -83,7 +84,6 @@ const Game = ({
   }
 
   // console.log('gameById', gameById);
-  console.log('score', score);
 
   const unityContext = new UnityContext({
     loaderUrl: `../${gameById[0].link}/Build/${gameById[0].link}.loader.js`,
@@ -105,7 +105,6 @@ const Game = ({
   // }
   // console.log('data arr', gameById[0].tabs);
 
-  console.log();
   const userNameToCreate = {
     username: localStorage.getItem('username-mande-gaming'),
     score: [
@@ -117,12 +116,31 @@ const Game = ({
   };
 
   if (score != 0) {
-    try {
+    if (localStorage.getItem('username-mande-gaming') == undefined) {
       createScore(userNameToCreate);
-    } catch (error) {
-      console.log('username deja luat');
+    } else if (score != 0) {
+      const newScore = {
+        name: urlParam.id,
+        score: score,
+      };
+      let arr = scoreByUsername[0].score;
+      arr.push(newScore);
+      scoreByUsername[0].score = arr;
+      console.log('arr2:', scoreByUsername[0]);
+      updateScoreData(scoreByUsername[0]._id, scoreByUsername[0]);
     }
   }
+  // const newScore = {
+  //   name: 'un joc',
+  //   score: 1111,
+  // };
+  // let arr = scoreByUsername[0].score;
+  // arr.push(newScore);
+
+  // let arr = scoreByUsername[0].score ? scoreByUsername[0].score : null;
+
+  // const gammers = arr.filter((game) => game.name === 'Awesome Zombie Crasher');
+  // console.log('gammers: ', gammers);
 
   const tabsData = () => (
     <Tabs>
@@ -154,7 +172,7 @@ const Game = ({
           <h2>If you wanna play any game on this platform</h2>
           <h2>you need to log in first</h2>
           <button onClick={generateUserNmae}>Play as Guest</button>
-          <button style={{marginTop:'20px',width:'20%'}}>Log in</button>
+          <button style={{ marginTop: '20px', width: '20%' }}>Log in</button>
         </Modal>
       </div>
       <h1 style={{ color: '#fff' }}>

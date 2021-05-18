@@ -262,19 +262,19 @@ class Header extends Component {
     // console.log('prevState login 2 ', prevProps.username);
 
     if (prevState.username != this.state.username) {
-      console.log('prevState login ', prevState.username);
-      console.log('prevState login 1 ', this.state.username);
+      // console.log('prevState login ', prevState.username);
+      // console.log('prevState login 1 ', this.state.username);
     }
   }
 
   render() {
     // console.log('user in head:',this.props.users);
     // console.log('usrn: ', this.state.username);
-    console.log(
-      "localStorage.getItem('username-mande-gaming') : ",
-      localStorage.getItem('username-mande-gaming')
-    );
-    console.log('username ', this.state.username);
+    // console.log(
+    //   "localStorage.getItem('username-mande-gaming') : ",
+    //   localStorage.getItem('username-mande-gaming')
+    // );
+    // console.log('username ', this.state.username);
 
     return (
       <>

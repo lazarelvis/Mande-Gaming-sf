@@ -25,10 +25,28 @@ const initialState = {
   createScoreSuccess: false,
   createScoreFailure: false,
   scoreFailure: null,
+
+  updateScore: [],
+  updateScoreSuccess: false,
+  updateScoreFailure: false,
+  setUpdateScore: null,
 };
 // eslint-disable-next-line
 export default (state = initialState, action) => {
   switch (action.type) {
+    case t.UPDATE_SCORE_SUCCESS:
+      return Object.assign({}, state, {
+        updateScore: action.data,
+        updateScoreSuccess: true,
+        updateScoreFailure: false,
+      });
+    case t.UPDATE_SCORE_FAILURE:
+      return Object.assign({}, state, {
+        updateScore: null,
+        updateScoreSuccess: false,
+        updateScoreFailure: true,
+        setUpdateScore: action.data,
+      });
     case t.GET_USERS_SUCCESS:
       return Object.assign({}, state, {
         users: action.data,
