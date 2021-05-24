@@ -1,6 +1,6 @@
 @font-face {
   src: url(../../Resources/fonts/UTM\ Bitsumishi\ Pro.ttf);
-  font-family: "Bitsumishi";
+  font-family: 'Bitsumishi';
 }
 
 .play-button {
@@ -13,7 +13,8 @@
 }
 
 .play-button button {
-  font-family: "Bitsumishi";
+  cursor: pointer;
+  font-family: 'Bitsumishi';
   font-size: 3rem;
   padding: 0.625rem 4.375rem;
   color: #fff;

@@ -2,12 +2,18 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
 import Modal from 'react-modal';
-
 import './css/style.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Unity, { UnityContext } from 'react-unity-webgl';
 import isEmpty from 'lodash/isEmpty';
+
+import { injectStyle } from 'react-toastify/dist/inject-style';
+import { ToastContainer, toast } from 'react-toastify';
+
+if (typeof window !== 'undefined') {
+  injectStyle();
+}
 
 const Game = ({
   fetchGameById,
@@ -92,7 +98,7 @@ const Game = ({
     codeUrl: `../${gameById[0].link}/Build/${gameById[0].link}.wasm`,
   });
   unityContext.on('ShowMessage', (score) => {
-    setScore(score);
+    setScore(score - 1);
   });
 
   // if (score != 0) {
@@ -105,6 +111,18 @@ const Game = ({
   // }
   // console.log('data arr', gameById[0].tabs);
 
+  function notify(text) {
+    toast(`${text}`, {
+      position: 'top-center',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  }
+
   const userNameToCreate = {
     username: localStorage.getItem('username-mande-gaming'),
     score: [
@@ -115,32 +133,46 @@ const Game = ({
     ],
   };
 
+  let executed = false;
   if (score != 0) {
     if (localStorage.getItem('username-mande-gaming') == undefined) {
       createScore(userNameToCreate);
     } else if (score != 0) {
-      const newScore = {
-        name: urlParam.id,
-        score: score,
-      };
-      let arr = scoreByUsername[0].score;
-      arr.push(newScore);
-      scoreByUsername[0].score = arr;
-      console.log('arr2:', scoreByUsername[0]);
-      updateScoreData(scoreByUsername[0]._id, scoreByUsername[0]);
+      // scoreByUsername[0].score.filter((game) => {});
+      scoreByUsername[0].score.map((game) => {
+        if (game.name === urlParam.id) {
+          if (game.score < score) {
+            if (scoreByUsername[0].score != game) {
+              game.score = score;
+
+              notify(
+                `🦄 Wow you got a new highscore ${game.name} ${score} points 🏅`
+              );
+              // console.log(scoreByUsername[0].score, scoreByUsername[0]._id);
+              updateScoreData(scoreByUsername[0]._id, scoreByUsername[0]);
+            }
+            executed = true;
+          } else if (game.score >= score) {
+            notify(`🦄 Wow try harder maybe you can get a highscore 🔥`);
+            executed = true;
+          }
+        }
+      });
+      if (executed == false) {
+        console.log('data de adaugat');
+        const newScore = {
+          name: urlParam.id,
+          score: score,
+        };
+        let arr = scoreByUsername[0].score;
+        arr.push(newScore);
+        scoreByUsername[0].score = arr;
+        // console.log('arr2:', scoreByUsername[0]);
+        updateScoreData(scoreByUsername[0]._id, scoreByUsername[0]);
+        notify(`🦄 You got a nice score for ${newScore.name} 🔥`);
+      }
     }
   }
-  // const newScore = {
-  //   name: 'un joc',
-  //   score: 1111,
-  // };
-  // let arr = scoreByUsername[0].score;
-  // arr.push(newScore);
-
-  // let arr = scoreByUsername[0].score ? scoreByUsername[0].score : null;
-
-  // const gammers = arr.filter((game) => game.name === 'Awesome Zombie Crasher');
-  // console.log('gammers: ', gammers);
 
   const tabsData = () => (
     <Tabs>
@@ -161,6 +193,9 @@ const Game = ({
   // console.log('username game: ', localStorage.getItem('username-mande-gaming'));
   return (
     <div>
+      {/* <button onClick={() => notify('hello world how are you')}>
+        click me
+      </button> */}
       <div>
         <Modal
           isOpen={modalIsOpen}
@@ -197,6 +232,17 @@ const Game = ({
         </div>
         <div className="tabs">{tabsData()}</div>
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };

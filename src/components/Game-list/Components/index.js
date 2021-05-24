@@ -18,6 +18,7 @@ const GameList = ({ fetchGames, games, users }) => {
           />
         ))
       : null;
+  console.log('games');
 
   return (
     <>
