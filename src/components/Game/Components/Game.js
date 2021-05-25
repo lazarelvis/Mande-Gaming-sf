@@ -135,29 +135,32 @@ const Game = ({
 
   let executed = false;
   if (score != 0) {
-    if (localStorage.getItem('username-mande-gaming') == undefined) {
+    if (localStorage.getItem('username-mande-gaming') != undefined) {
       createScore(userNameToCreate);
     } else if (score != 0) {
       // scoreByUsername[0].score.filter((game) => {});
-      scoreByUsername[0].score.map((game) => {
-        if (game.name === urlParam.id) {
-          if (game.score < score) {
-            if (scoreByUsername[0].score != game) {
-              game.score = score;
+      if (!isEmpty(scoreByUsername)) {
+        scoreByUsername[0].score.map((game) => {
+          if (game.name === urlParam.id) {
+            if (game.score < score) {
+              if (scoreByUsername[0].score != game) {
+                game.score = score;
 
-              notify(
-                `🦄 Wow you got a new highscore ${game.name} ${score} points 🏅`
-              );
-              // console.log(scoreByUsername[0].score, scoreByUsername[0]._id);
-              updateScoreData(scoreByUsername[0]._id, scoreByUsername[0]);
+                notify(
+                  `🦄 Wow you got a new highscore ${game.name} ${score} points 🏅`
+                );
+                // console.log(scoreByUsername[0].score, scoreByUsername[0]._id);
+                updateScoreData(scoreByUsername[0]._id, scoreByUsername[0]);
+              }
+              executed = true;
+            } else if (game.score >= score) {
+              notify(`🦄 Wow try harder maybe you can get a highscore 🔥`);
+              executed = true;
             }
-            executed = true;
-          } else if (game.score >= score) {
-            notify(`🦄 Wow try harder maybe you can get a highscore 🔥`);
-            executed = true;
           }
-        }
-      });
+        });
+      }
+
       if (executed == false) {
         console.log('data de adaugat');
         const newScore = {

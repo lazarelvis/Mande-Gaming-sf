@@ -6,6 +6,7 @@ import gamepic2 from '../../../Resources/images/imgMazeWorrior.png';
 
 const GameCard = (props) => {
   // console.log('props.video', props);
+
   return (
     <a href={`/game/${props.nume}`}>
       <div className="card-game">
