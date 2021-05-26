@@ -135,8 +135,12 @@ const Game = ({
 
   let executed = false;
   if (score != 0) {
-    if (localStorage.getItem('username-mande-gaming') != undefined) {
+    if (
+      localStorage.getItem('username-mande-gaming') != undefined &&
+      scoreByUsername.length == 0
+    ) {
       createScore(userNameToCreate);
+      fetchScoreByUsername(localStorage.getItem('username-mande-gaming'));
     } else if (score != 0) {
       // scoreByUsername[0].score.filter((game) => {});
       if (!isEmpty(scoreByUsername)) {
