@@ -135,8 +135,16 @@ const Game = ({
 
   let executed = false;
   if (score != 0) {
+<<<<<<< HEAD
     if (localStorage.getItem("username-mande-gaming") != undefined) {
+=======
+    if (
+      localStorage.getItem('username-mande-gaming') != undefined &&
+      scoreByUsername.length == 0
+    ) {
+>>>>>>> 65c5745dcf1bf967d17b225e6e7bc2a213b1097f
       createScore(userNameToCreate);
+      fetchScoreByUsername(localStorage.getItem('username-mande-gaming'));
     } else if (score != 0) {
       // scoreByUsername[0].score.filter((game) => {});
       if (!isEmpty(scoreByUsername)) {
