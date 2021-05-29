@@ -1,26 +1,78 @@
-import React from 'react';
-import Row from './row'
-import HeadRow from './headrow'
-import "./css/style.css";
+import React, { useEffect } from "react";
+import Row from "./row";
+import HeadRow from "./headrow";
+import { fetchAllScore } from "../../actions/score";
+import { connect } from "react-redux";
 
- const LeaderBoard = () => {
-     return (  
-         <>
-         <table id="table">
-            <HeadRow />
-            <tbody>
-                <Row number="1"nume="Mihai" joc="Metin2" scor="12000" />
-                <Row number="2"nume="Elvis" joc="transformice" scor="9000" />
-                <Row number="3"nume="Preotul" joc="Tanki" scor="7300" />
-                <Row number="4"nume="Creatina98" joc="Eterium" scor="6600" />
-                <Row number="5"nume="Lucian" joc="Paladins" scor="4000" />
-                <Row number="6"nume="Cloudy" joc="Dota 2" scor="2000" />
-                <Row number="7"nume="The GOD" joc="League of Legends" scor="1000" />
-                <Row number="8"nume="Gues2212" joc="Slider" scor="900" />
-            </tbody>
-         </table>
-         </>
-     );
- }
-  
- export default LeaderBoard;
+import "./css/style.css";
+import score from "../../services/score";
+let counter = 1;
+const LeaderBoard = ({ score, fetchScores }) => {
+  useEffect(() => {
+    fetchScores();
+  }, []);
+
+  const scoruri = [];
+  const Show = () =>
+    score
+      ? score.map((item, i) =>
+          item.score
+            ? item.score.map((item2, i) =>
+                scoruri.push({
+                  utilizator: item.username,
+                  score11: item2.score,
+                  joc: item2.name,
+                })
+              )
+            : null
+        )
+      : null;
+
+  function compare(a, b) {
+    if (a.score11 < b.score11) {
+      return 1;
+    }
+    if (a.score11 > b.score11) {
+      return -1;
+    }
+    return 0;
+  }
+
+  const Afisare = () =>
+    scoruri.sort(compare)
+      ? scoruri
+          .sort(compare)
+          .map((item, i) => (
+            <Row
+              number={counter++}
+              nume={item.utilizator}
+              joc={item.joc}
+              scor={item.score11}
+            />
+          ))
+      : null;
+
+  return (
+    <>
+      <div style={{ display: "none" }}>{Show()}</div>
+      <table id="table">
+        <HeadRow />
+        <tbody>{Afisare()}</tbody>
+      </table>
+    </>
+  );
+};
+
+const mapStateToProps = (state) => {
+  return {
+    score: state.score,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchScores: () => {
+    dispatch(fetchAllScore());
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(LeaderBoard);

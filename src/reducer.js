@@ -1,4 +1,4 @@
-import * as t from './actionTypes';
+import * as t from "./actionTypes";
 
 const initialState = {
   users: [],
@@ -10,6 +10,11 @@ const initialState = {
   getGamesSuccess: false,
   getGamesFailure: false,
   gamesFailure: null,
+
+  score: [],
+  getScoreSuccess: false,
+  getScoreFailure: false,
+  scoreFailure: null,
 
   gameById: [],
   getGameByIdSuccess: false,
@@ -60,7 +65,19 @@ export default (state = initialState, action) => {
         getUsersFailure: true,
         usersFailure: action.data,
       });
-
+    case t.GET_SCORE_SUCCESS:
+      return Object.assign({}, state, {
+        score: action.data,
+        getScoreSuccess: true,
+        getScoreFailure: false,
+      });
+    case t.GET_SCORE_FAILURE:
+      return Object.assign({}, state, {
+        score: null,
+        getScoreSuccess: false,
+        getScoreFailure: true,
+        scoreFailure: action.data,
+      });
     case t.GET_GAMES_SUCCESS:
       return Object.assign({}, state, {
         games: action.data,

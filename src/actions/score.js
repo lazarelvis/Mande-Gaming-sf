@@ -1,5 +1,5 @@
-import * as t from '../actionTypes';
-import scoreEndpoint from '../services/score';
+import * as t from "../actionTypes";
+import scoreEndpoint from "../services/score";
 
 //get score by username
 function getScoreByUsername(json) {
@@ -76,5 +76,30 @@ export const updateScoreData = (id, data) => (dispatch, getState) => {
     })
     .catch((error) => {
       dispatch(updateScoreError(error));
+    });
+};
+
+function receiveScore(json) {
+  return {
+    type: t.GET_SCORE_SUCCESS,
+    data: json,
+  };
+}
+
+function receiveScoreError(error) {
+  return {
+    type: t.GET_SCORE_FAILURE,
+    error,
+  };
+}
+
+export const fetchAllScore = () => (dispatch, getState) => {
+  return scoreEndpoint
+    .fetchAll()
+    .then((json) => {
+      dispatch(receiveScore(json));
+    })
+    .catch((error) => {
+      dispatch(receiveScoreError(error));
     });
 };
