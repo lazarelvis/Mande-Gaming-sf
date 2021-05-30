@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import './css/style.css';
 import './css/styleModal.css';
 import { Link } from 'react-router-dom';
-
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
 import FormField from '../utils/formField';
 
-import { fetchAllUsers } from '../../actions/user';
+import { fetchAllUsers, createUser } from '../../actions/user';
 import { connect } from 'react-redux';
 import { ErrorMessage, Field, FieldArray, Form, Formik } from 'formik';
 import * as Yup from 'yup';
@@ -108,9 +107,6 @@ class Header extends Component {
     },
   };
 
-  componentDidMount() {
-    this.props.fetchUsers();
-  }
   popUpRegiser = () => (
     <div>
       <Popup
@@ -203,6 +199,7 @@ class Header extends Component {
                     }}
                     onSubmit={(values) => {
                       console.log('Logging in', values);
+                      this.props.createUser(values);
                     }}
                     validationSchema={Yup.object().shape({
                       firstname: Yup.string()
@@ -389,6 +386,7 @@ class Header extends Component {
         username: localStorage.getItem('username-mande-gaming'),
       });
     }
+    this.props.fetchUsers();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -403,6 +401,8 @@ class Header extends Component {
   }
 
   render() {
+    console.log(this.props.users);
+
     return (
       <>
         {this.popUpRegiser()}
@@ -447,6 +447,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
   fetchUsers: () => {
     dispatch(fetchAllUsers());
+  },
+  createUser: (data) => {
+    dispatch(createUser(data));
   },
 });
 

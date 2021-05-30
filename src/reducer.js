@@ -1,10 +1,15 @@
-import * as t from "./actionTypes";
+import * as t from './actionTypes';
 
 const initialState = {
   users: [],
   getUsersSuccess: false,
   usersFailure: null,
   getUsersFailure: false,
+
+  createUser: [],
+  createUserSuccess: false,
+  createUserFailure: false,
+  setUserFailure: null,
 
   games: [],
   getGamesSuccess: false,
@@ -51,6 +56,19 @@ export default (state = initialState, action) => {
         updateScoreSuccess: false,
         updateScoreFailure: true,
         setUpdateScore: action.data,
+      });
+    case t.CREATE_USER_SUCCESS:
+      return Object.assign({}, state, {
+        createUser: action.data,
+        createUserFailure: true,
+        createUserFailure: false,
+      });
+    case t.CREATE_USER_FAILURE:
+      return Object.assign({}, state, {
+        createUser: null,
+        createUserFailure: false,
+        createUserFailure: true,
+        setUserFailure: action.data,
       });
     case t.GET_USERS_SUCCESS:
       return Object.assign({}, state, {
