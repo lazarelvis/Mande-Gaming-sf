@@ -10,6 +10,8 @@ import FormField from '../utils/formField';
 
 import { fetchAllUsers } from '../../actions/user';
 import { connect } from 'react-redux';
+import { ErrorMessage, Field, FieldArray, Form, Formik } from 'formik';
+import * as Yup from 'yup';
 
 class Header extends Component {
   state = {
@@ -191,49 +193,182 @@ class Header extends Component {
                     <h1>GREAT TO HAVE YOU BACK!</h1>
                     <h6>Enter your details below</h6>
                   </div>
-                  <div className="content">
-                    <form onSubmit={(event) => this.submitForm(event)}>
-                      <FormField
-                        id={'name'}
-                        formdata={this.state.formdata.name}
-                        // change={(element) => this.updateForm(element)}
-                      />
-                      <FormField
-                        id={'lastname'}
-                        formdata={this.state.formdata.lastname}
-                        // change={(element) => this.updateForm(element)}
-                      />
-                      <FormField
-                        id={'email'}
-                        formdata={this.state.formdata.email}
-                        // change={(element) => this.updateForm(element)}
-                      />
-                      <FormField
-                        id={'password'}
-                        formdata={this.state.formdata.password}
-                        // change={(element) => this.updateForm(element)}
-                      />
-                      <FormField
-                        id={'game'}
-                        formdata={this.state.formdata.game}
-                        // change={(element) => this.updateForm(element)}
-                      />
+                  <Formik
+                    initialValues={{
+                      firstname: '',
+                      lastname: '',
+                      email: '',
+                      password: '',
+                      favoritegame: '',
+                    }}
+                    onSubmit={(values) => {
+                      console.log('Logging in', values);
+                    }}
+                    validationSchema={Yup.object().shape({
+                      firstname: Yup.string()
+                        .max(255)
+                        .required('First name required'),
+                      lastname: Yup.string()
+                        .max(255)
+                        .required('Last name required'),
+                      email: Yup.string().email().required('Email required'),
+                      password: Yup.string()
+                        .required('No password provided.')
+                        .min(
+                          8,
+                          'Password is too short - should be 8 chars minimum.'
+                        ),
+                      favoritegame: Yup.string().max(255),
+                    })}
+                  >
+                    {(props) => {
+                      const {
+                        values,
+                        touched,
+                        errors,
+                        isSubmitting,
+                        handleChange,
+                        handleBlur,
+                        handleSubmit,
+                      } = props;
+                      return (
+                        <div className="content">
+                          <form onSubmit={handleSubmit}>
+                            <div className="formBlock">
+                              <label
+                                className="label_inputs"
+                                htmlFor="firstname"
+                              >
+                                First name
+                              </label>
+                              <input
+                                name="firstname"
+                                type="text"
+                                placeholder="Enter your first name"
+                                value={values.firstname}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                className={
+                                  errors.firstname &&
+                                  touched.firstname &&
+                                  'error'
+                                }
+                              />
+                              {errors.firstname && touched.firstname && (
+                                <div className="input-feedback">
+                                  {errors.firstname}
+                                </div>
+                              )}
+                            </div>
 
-                      {this.state.formError ? (
-                        <div className="error_label">
-                          Please check your data
+                            <div className="formBlock">
+                              <label
+                                className="label_inputs"
+                                htmlFor="lastname"
+                              >
+                                Last name
+                              </label>
+                              <input
+                                name="lastname"
+                                type="text"
+                                placeholder="Enter your last name"
+                                value={values.lastname}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                className={
+                                  errors.lastname && touched.lastname && 'error'
+                                }
+                              />
+                              {errors.lastname && touched.lastname && (
+                                <div className="input-feedback">
+                                  {errors.lastname}
+                                </div>
+                              )}
+                            </div>
+
+                            <div className="formBlock">
+                              <label className="label_inputs" htmlFor="email">
+                                Email
+                              </label>
+                              <input
+                                name="email"
+                                type="text"
+                                placeholder="Enter your email"
+                                value={values.email}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                className={
+                                  errors.email && touched.email && 'error'
+                                }
+                              />
+                              {errors.email && touched.email && (
+                                <div className="input-feedback">
+                                  {errors.email}
+                                </div>
+                              )}
+                            </div>
+                            <div className="formBlock">
+                              <label className="label_inputs" htmlFor="email">
+                                Password
+                              </label>
+                              <input
+                                name="password"
+                                type="password"
+                                placeholder="Enter your password"
+                                value={values.password}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                className={
+                                  errors.password && touched.password && 'error'
+                                }
+                              />
+                              {errors.password && touched.password && (
+                                <div className="input-feedback">
+                                  {errors.password}
+                                </div>
+                              )}
+                            </div>
+
+                            <div className="formBlock">
+                              <label
+                                className="label_inputs"
+                                htmlFor="favoritegame"
+                              >
+                                Favorite Game
+                              </label>
+                              <input
+                                name="favoritegame"
+                                type="text"
+                                placeholder="Enter your favorite game"
+                                value={values.favoritegame}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                className={
+                                  errors.favoritegame &&
+                                  touched.favoritegame &&
+                                  'error'
+                                }
+                              />
+                              {errors.favoritegame && touched.favoritegame && (
+                                <div className="input-feedback">
+                                  {errors.favoritegame}
+                                </div>
+                              )}
+                            </div>
+                            <div className="container-register-btn register-btn">
+                              <button
+                                className="register-button"
+                                type="submit"
+                                disabled={isSubmitting}
+                              >
+                                Register
+                              </button>
+                            </div>
+                          </form>
                         </div>
-                      ) : null}
-                      <div className="container-register-btn">
-                        <button
-                          className="register-button"
-                          onClick={(event) => this.submitForm(event)}
-                        >
-                          GET STARTED
-                        </button>
-                      </div>
-                    </form>
-                  </div>
+                      );
+                    }}
+                  </Formik>
                 </div>
               )}
             </Popup>
@@ -268,14 +403,6 @@ class Header extends Component {
   }
 
   render() {
-    // console.log('user in head:',this.props.users);
-    // console.log('usrn: ', this.state.username);
-    // console.log(
-    //   "localStorage.getItem('username-mande-gaming') : ",
-    //   localStorage.getItem('username-mande-gaming')
-    // );
-    // console.log('username ', this.state.username);
-
     return (
       <>
         {this.popUpRegiser()}
