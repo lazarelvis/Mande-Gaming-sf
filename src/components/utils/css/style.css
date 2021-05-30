@@ -15,9 +15,15 @@
   border: none;
   background: transparent;
   border-bottom: 1px solid #9297ac;
+  color: white;
 }
 .formBlock input::placeholder {
   color: #9297ac;
   font-size: 0.833vw;
   font-family: 'OpenSans-Regular';
+}
+
+.input-feedback {
+  color: #c9293d;
+  font-size: 0.8vw;
 }
