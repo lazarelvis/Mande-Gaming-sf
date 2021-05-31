@@ -136,11 +136,11 @@ const Game = ({
   let executed = false;
   if (score != 0) {
     if (
-      localStorage.getItem('username-mande-gaming') != undefined &&
+      localStorage.getItem("username-mande-gaming") != undefined &&
       scoreByUsername.length == 0
     ) {
       createScore(userNameToCreate);
-      fetchScoreByUsername(localStorage.getItem('username-mande-gaming'));
+      fetchScoreByUsername(localStorage.getItem("username-mande-gaming"));
     } else if (score != 0) {
       // scoreByUsername[0].score.filter((game) => {});
       if (!isEmpty(scoreByUsername)) {
@@ -203,7 +203,10 @@ const Game = ({
       return <Unity unityContext={unityContext} />;
     } else {
       return (
-        <iframe src="https://stackoverflow.com/users/7159290/prateek-agrawal?tab=profile#user-card" />
+        <iframe
+          src={`${gameById[0].frame}`}
+          style={{ width: "1200px", height: "1200px" }}
+        ></iframe>
       );
     }
   };
