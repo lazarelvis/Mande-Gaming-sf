@@ -39,9 +39,10 @@ const LeaderBoard = ({ score, fetchScores }) => {
   }
 
   const Afisare = () =>
-    scoruri.sort(compare)
+    scoruri.sort(compare).slice(0, 10)
       ? scoruri
           .sort(compare)
+          .slice(0, 10)
           .map((item, i) => (
             <Row
               number={counter++}
