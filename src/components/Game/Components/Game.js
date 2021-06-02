@@ -98,7 +98,7 @@ const Game = ({
     codeUrl: `../${gameById[0].link}/Build/${gameById[0].link}.wasm`,
   });
   unityContext.on("ShowMessage", (score) => {
-    setScore(score - 1);
+    setScore(score);
   });
 
   // if (score != 0) {
