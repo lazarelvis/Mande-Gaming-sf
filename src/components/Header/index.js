@@ -438,11 +438,6 @@ class Header extends Component {
             <li>
               <Link to="/">Home</Link>
             </li>
-            <li>
-              <h1 style={{ color: "#fff", paddingRight: "200px" }}>
-                {this.state.username}
-              </h1>
-            </li>
           </ul>
         </div>
         <div>
@@ -455,7 +450,7 @@ class Header extends Component {
           </div>
         </div>
         <div className="unservane_header">
-          <p>Debucificatorul de buci</p>
+          <p>{this.state.username}</p>
         </div>
       </>
     );
