@@ -1,65 +1,65 @@
-import React, { Component } from 'react';
-import './css/style.css';
-import './css/styleModal.css';
-import { Link } from 'react-router-dom';
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
+import React, { Component } from "react";
+import "./css/style.css";
+import "./css/styleModal.css";
+import { Link } from "react-router-dom";
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
 
-import FormField from '../utils/formField';
+import FormField from "../utils/formField";
 
-import { fetchAllUsers, createUser } from '../../actions/user';
-import { connect } from 'react-redux';
-import { ErrorMessage, Field, FieldArray, Form, Formik } from 'formik';
-import * as Yup from 'yup';
+import { fetchAllUsers, createUser } from "../../actions/user";
+import { connect } from "react-redux";
+import { ErrorMessage, Field, FieldArray, Form, Formik } from "formik";
+import * as Yup from "yup";
 
 class Header extends Component {
   state = {
-    username: '',
+    username: "",
     formError: false,
-    formSuccess: '',
+    formSuccess: "",
     formdata: {
       name: {
-        element: 'input',
-        value: '',
+        element: "input",
+        value: "",
         config: {
-          name: 'name_input',
-          type: 'text',
-          placeholder: 'Enter your first name',
-          label: 'First Name',
+          name: "name_input",
+          type: "text",
+          placeholder: "Enter your first name",
+          label: "First Name",
         },
         validation: {
           required: true,
         },
         valid: false,
         touched: false,
-        validationMessage: '',
+        validationMessage: "",
         showlabel: true,
       },
       lastname: {
-        element: 'input',
-        value: '',
+        element: "input",
+        value: "",
         config: {
-          name: 'lastname_input',
-          type: 'text',
-          placeholder: 'Enter your last name',
-          label: 'Last Name',
+          name: "lastname_input",
+          type: "text",
+          placeholder: "Enter your last name",
+          label: "Last Name",
         },
         validation: {
           required: true,
         },
         valid: false,
         touched: false,
-        validationMessage: '',
+        validationMessage: "",
         showlabel: true,
       },
       email: {
-        element: 'input',
-        value: '',
+        element: "input",
+        value: "",
         config: {
-          name: 'email_input',
-          label: 'Email',
-          type: 'email',
-          placeholder: 'Enter your email',
+          name: "email_input",
+          label: "Email",
+          type: "email",
+          placeholder: "Enter your email",
         },
         validation: {
           required: true,
@@ -67,41 +67,41 @@ class Header extends Component {
         },
         valid: false,
         touched: false,
-        validationMessage: '',
+        validationMessage: "",
         showlabel: true,
       },
       password: {
-        element: 'input',
-        value: '',
+        element: "input",
+        value: "",
         config: {
-          name: 'password_input',
-          type: 'password',
-          placeholder: 'Enter your password',
-          label: 'Password',
+          name: "password_input",
+          type: "password",
+          placeholder: "Enter your password",
+          label: "Password",
         },
         validation: {
           required: true,
         },
         valid: false,
         touched: false,
-        validationMessage: '',
+        validationMessage: "",
         showlabel: true,
       },
       game: {
-        element: 'input',
-        value: '',
+        element: "input",
+        value: "",
         config: {
-          name: 'game',
-          type: 'text',
-          placeholder: 'Enter your favorite game',
-          label: 'Favorite Game',
+          name: "game",
+          type: "text",
+          placeholder: "Enter your favorite game",
+          label: "Favorite Game",
         },
         validation: {
           required: true,
         },
         valid: false,
         touched: false,
-        validationMessage: '',
+        validationMessage: "",
         showlabel: true,
       },
     },
@@ -138,12 +138,12 @@ class Header extends Component {
             <div className="content">
               <form onSubmit={(event) => this.submitForm(event)}>
                 <FormField
-                  id={'email'}
+                  id={"email"}
                   formdata={this.state.formdata.email}
                   // change={(element) => this.updateForm(element)}
                 />
                 <FormField
-                  id={'password'}
+                  id={"password"}
                   formdata={this.state.formdata.password}
                   // change={(element) => this.updateForm(element)}
                 />
@@ -191,29 +191,29 @@ class Header extends Component {
                   </div>
                   <Formik
                     initialValues={{
-                      firstname: '',
-                      lastname: '',
-                      email: '',
-                      password: '',
-                      favoritegame: '',
+                      firstname: "",
+                      lastname: "",
+                      email: "",
+                      password: "",
+                      favoritegame: "",
                     }}
                     onSubmit={(values) => {
-                      console.log('Logging in', values);
+                      console.log("Logging in", values);
                       this.props.createUser(values);
                     }}
                     validationSchema={Yup.object().shape({
                       firstname: Yup.string()
                         .max(255)
-                        .required('First name required'),
+                        .required("First name required"),
                       lastname: Yup.string()
                         .max(255)
-                        .required('Last name required'),
-                      email: Yup.string().email().required('Email required'),
+                        .required("Last name required"),
+                      email: Yup.string().email().required("Email required"),
                       password: Yup.string()
-                        .required('No password provided.')
+                        .required("No password provided.")
                         .min(
                           8,
-                          'Password is too short - should be 8 chars minimum.'
+                          "Password is too short - should be 8 chars minimum."
                         ),
                       favoritegame: Yup.string().max(255),
                     })}
@@ -248,7 +248,7 @@ class Header extends Component {
                                 className={
                                   errors.firstname &&
                                   touched.firstname &&
-                                  'error'
+                                  "error"
                                 }
                               />
                               {errors.firstname && touched.firstname && (
@@ -273,7 +273,7 @@ class Header extends Component {
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 className={
-                                  errors.lastname && touched.lastname && 'error'
+                                  errors.lastname && touched.lastname && "error"
                                 }
                               />
                               {errors.lastname && touched.lastname && (
@@ -295,7 +295,7 @@ class Header extends Component {
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 className={
-                                  errors.email && touched.email && 'error'
+                                  errors.email && touched.email && "error"
                                 }
                               />
                               {errors.email && touched.email && (
@@ -316,7 +316,7 @@ class Header extends Component {
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 className={
-                                  errors.password && touched.password && 'error'
+                                  errors.password && touched.password && "error"
                                 }
                               />
                               {errors.password && touched.password && (
@@ -343,7 +343,7 @@ class Header extends Component {
                                 className={
                                   errors.favoritegame &&
                                   touched.favoritegame &&
-                                  'error'
+                                  "error"
                                 }
                               />
                               {errors.favoritegame && touched.favoritegame && (
@@ -376,14 +376,14 @@ class Header extends Component {
   );
 
   componentDidMount() {
-    if (localStorage.getItem('username-mande-gaming') == undefined) {
+    if (localStorage.getItem("username-mande-gaming") == undefined) {
       this.setState({
-        username: '',
+        username: "",
       });
     }
-    if (localStorage.getItem('username-mande-gaming') != undefined) {
+    if (localStorage.getItem("username-mande-gaming") != undefined) {
       this.setState({
-        username: localStorage.getItem('username-mande-gaming'),
+        username: localStorage.getItem("username-mande-gaming"),
       });
     }
     this.props.fetchUsers();
@@ -406,6 +406,7 @@ class Header extends Component {
     return (
       <>
         {this.popUpRegiser()}
+
         <div className="navbar">
           <ul>
             <li>
@@ -418,7 +419,7 @@ class Header extends Component {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <h1 style={{ color: '#fff', paddingRight: '200px' }}>
+              <h1 style={{ color: "#fff", paddingRight: "200px" }}>
                 {this.state.username}
               </h1>
             </li>
@@ -432,6 +433,9 @@ class Header extends Component {
               </Link>
             </h1>
           </div>
+        </div>
+        <div className="unservane_header">
+          <p>Debucificatorul de buci</p>
         </div>
       </>
     );
