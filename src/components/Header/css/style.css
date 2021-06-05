@@ -69,3 +69,29 @@
   left: 0;
   border-radius: 0px 30px 30px 0px;
 }
+.navbar-button button {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-button-logout {
+  font-family: Bitsumishi;
+  font-size: 1.7rem;
+  color: white;
+  float: right;
+  border-radius: 20px;
+  margin: 19px 100px 0 27px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.logout-button {
+  font-family: Bitsumishi;
+  font-size: 1.25vw;
+  background-image: linear-gradient(to right, #c9293d, #fd334c);
+  color: white;
+  padding: 0.625vw 2.167vw;
+  border-radius: 1.979vw;
+  text-decoration: none;
+  cursor: pointer;
+}
