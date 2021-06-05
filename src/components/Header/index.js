@@ -25,6 +25,7 @@ if (typeof window !== 'undefined') {
 class Header extends Component {
   state = {
     username: '',
+    logout: true,
   };
   //|| this.props.getUsersSuccess
 
@@ -40,11 +41,20 @@ class Header extends Component {
     });
   }
 
+  logOut = () => {
+    logOutUser();
+    this.setState({
+      logout: false,
+    });
+  };
+
   popUpRegiser = () => (
     <div>
-      {this.props.getAuthSuccess || this.props.setAuthenticationSuccess ? (
-        <div className="navbar-button">
-          <button onClick={() => logOutUser()}>Log out</button>{' '}
+      {this.props.getAuthSuccess && this.state.logout ? (
+        <div className="navbar-button-logout">
+          <button className="logout-button" onClick={this.logOut}>
+            Log out
+          </button>
         </div>
       ) : (
         <Popup
@@ -68,7 +78,6 @@ class Header extends Component {
               <button className="close" onClick={close}>
                 &times;
               </button>
-
               <div className="header">
                 <h1>LOGIN</h1>
                 <h6>Enter your details below</h6>
@@ -82,6 +91,9 @@ class Header extends Component {
                 onSubmit={(values) => {
                   console.log('Logging data:', values);
                   this.props.fetchAuthenticationUser(values);
+                  this.setState({
+                    logout: true,
+                  });
                 }}
                 validationSchema={Yup.object().shape({
                   email: Yup.string().email().required('Email required'),
@@ -141,11 +153,7 @@ class Header extends Component {
                         </div>
 
                         <div className="container-register-btn register-btn">
-                          <button
-                            className="register-button"
-                            type="submit"
-                            disabled={isSubmitting}
-                          >
+                          <button className="register-button" type="submit">
                             Login
                           </button>
                         </div>
@@ -397,7 +405,6 @@ class Header extends Component {
         username: localStorage.getItem('username-mande-gaming'),
       });
     }
-    this.props.fetchUsers();
     this.props.fetchAuthUser();
   }
 
@@ -407,13 +414,15 @@ class Header extends Component {
     ) {
       this.notify('Successfully logged in');
     }
+    if (prevProps.authentication !== this.props.authentication) {
+      this.props.fetchAuthUser();
+    }
   }
 
   render() {
-    console.log('users: ', this.props.users);
-    console.log('auth data: ', this.props.authentication);
+    // console.log('users: ', this.props.users);
+    // console.log('auth data: ', this.props.authentication);
     console.log('auth data: ', this.props.auth);
-
     return (
       <>
         {this.popUpRegiser()}

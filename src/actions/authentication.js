@@ -53,6 +53,6 @@ export const fetchAuthUser = () => (dispatch, getState) => {
     });
 };
 
-export const logOutUser = () => {
-  client.logout();
-};
+export async function logOutUser() {
+  await client.logout();
+}
