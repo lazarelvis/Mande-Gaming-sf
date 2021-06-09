@@ -59,16 +59,27 @@
   color: white;
 }
 .unservane_header {
-  padding: 7px 19px 7px 7px;
+  padding: 0px 30px 10px 10px;
   font-size: 20px;
   font-family: Bitsumishi;
   background-color: #252f5a;
   border: 5px solid #c9293d;
   color: white;
   position: absolute;
+  width: 4px;
   left: 0;
-  border-radius: 0px 30px 30px 0px;
+  top: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 0px 0px 30px 30px;
+  border-top: none;
 }
+.unservane_header p {
+  writing-mode: vertical-rl;
+  letter-spacing: -8px;
+  text-orientation: upright;
+}
+
 .navbar-button button {
   text-decoration: none;
   color: white;

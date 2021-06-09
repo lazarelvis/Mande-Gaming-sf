@@ -230,9 +230,6 @@ const Game = ({
           <button style={{ marginTop: "20px", width: "20%" }}>Log in</button>
         </Modal>
       </div>
-      <h1 style={{ color: "#fff" }}>
-        {localStorage.getItem("username-mande-gaming")}
-      </h1>
       <div className="box-game">
         <div style={{ width: "1200px", height: "800px", margin: "0 auto" }}>
           {/* <Unity unityContext={unityContext} /> */}
