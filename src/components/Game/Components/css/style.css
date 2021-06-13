@@ -168,7 +168,7 @@ canvas {
   color: white;
   text-align: center;
   border: 5px solid #fd334c !important;
-  inset: 140px 310px !important;
+  inset: 90px 340px !important;
   border-radius: 30px !important;
 }
 .ReactModal__Content--after-open h1 {

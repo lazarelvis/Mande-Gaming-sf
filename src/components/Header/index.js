@@ -201,8 +201,11 @@ class Header extends Component {
                         email: '',
                         password: '',
                         favoritegame: '',
+                        onlineGames: [],
+                        puncte: 0,
                       }}
                       onSubmit={(values) => {
+                        console.log('Register in', values);
                         this.props.createUser(values);
                         this.notify('Successfully registered');
                       }}
@@ -435,18 +438,11 @@ class Header extends Component {
   render() {
     // console.log('users: ', this.props.users);
     // console.log('auth data: ', this.props.authentication);
-    // console.log(
-    //   'auth data state: ',
-    //   this.state.authdata
-    //     ? this.state.authdata.user
-    //       ? this.state.authdata.user.email
-    //       : null
-    //     : null
-    // );
-    console.log('state.auth', this.props.auth);
+    console.log('auth data: ', this.props.auth);
     return (
       <>
         {this.popUpRegiser()}
+
         <div className="navbar">
           <ul>
             <li>
@@ -457,11 +453,6 @@ class Header extends Component {
             </li>
             <li>
               <Link to="/">Home</Link>
-            </li>
-            <li>
-              <h1 style={{ color: '#fff', paddingRight: '200px' }}>
-                {this.state.username}
-              </h1>
             </li>
           </ul>
         </div>
@@ -480,6 +471,9 @@ class Header extends Component {
                 : null
               : null}
           </h1>
+        </div>
+        <div className="unservane_header">
+          <p>{this.state.username}</p>
         </div>
       </>
     );
