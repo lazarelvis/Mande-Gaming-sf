@@ -73,6 +73,7 @@
   margin: 19px 100px 0 27px;
   text-decoration: none;
   cursor: pointer;
+  padding: 9px 27px;
 }
 
 .logout-button {
@@ -80,8 +81,9 @@
   font-size: 1.25vw;
   background-image: linear-gradient(to right, #c9293d, #fd334c);
   color: white;
-  padding: 0.625vw 2.167vw;
+  padding: 10px 30px;
   border-radius: 1.979vw;
   text-decoration: none;
   cursor: pointer;
+  border: none;
 }

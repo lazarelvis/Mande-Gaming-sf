@@ -56,3 +56,30 @@ export const fetchAuthUser = () => (dispatch, getState) => {
 export async function logOutUser() {
   await client.logout();
 }
+
+//logout
+//reAutenticate
+function receiveLogOut(json) {
+  return {
+    type: t.SET_AUTH_LOG_OUT_SUCCESS,
+    data: json,
+  };
+}
+
+function receiveLogOutError(error) {
+  return {
+    type: t.SET_AUTH_LOG_OUT_FAILURE,
+    error,
+  };
+}
+
+export const fetchLogOut = () => (dispatch, getState) => {
+  return client
+    .logout()
+    .then((json) => {
+      dispatch(receiveLogOut(json));
+    })
+    .catch((error) => {
+      dispatch(receiveLogOutError(error));
+    });
+};

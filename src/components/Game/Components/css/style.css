@@ -1,14 +1,14 @@
 @font-face {
   src: url(../../../../Resources/fonts/Poppins-SemiBold.ttf);
-  font-family: "Poppins-SemiBold";
+  font-family: 'Poppins-SemiBold';
 }
 @font-face {
   src: url(../../../../Resources/fonts/Poppins-Regular.ttf);
-  font-family: "Poppins-Regular";
+  font-family: 'Poppins-Regular';
 }
 @font-face {
   src: url(../../../../Resources/fonts/Poppins-Medium.ttf);
-  font-family: "Poppins-Medium";
+  font-family: 'Poppins-Medium';
 }
 .box-game {
   text-align: center;
@@ -113,7 +113,7 @@
   padding: 15px 40px;
 }
 .react-tabs .react-tabs__tab-list {
-  font-family: "Poppins-Medium";
+  font-family: 'Poppins-Medium';
   font-size: 24px;
   background: #000037;
   border-bottom: unset;
@@ -136,19 +136,19 @@
 .react-tabs h1 {
   font-size: 45px;
   text-transform: uppercase;
-  font-family: "Poppins-SemiBold";
+  font-family: 'Poppins-SemiBold';
 }
 .react-tabs h6 {
   font-size: 25px;
   color: #9297ac;
   text-transform: uppercase;
-  font-family: "Poppins-Regular";
+  font-family: 'Poppins-Regular';
 }
 .react-tabs p {
   padding-top: 25px;
   font-size: 25px;
   color: #9297ac;
-  font-family: "Poppins-Regular";
+  font-family: 'Poppins-Regular';
 }
 
 canvas {
@@ -163,7 +163,7 @@ canvas {
 .ReactModal__Content--after-open {
   padding-top: 50px !important;
   font-size: 20px;
-  font-family: "Poppins-Regular";
+  font-family: 'Poppins-Regular';
   background-color: #000132 !important;
   color: white;
   text-align: center;
@@ -186,6 +186,7 @@ canvas {
   margin-left: 87px;
   margin-right: 87px;
   width: 40%;
+  cursor: pointer;
 }
 
 .Toastify__toast--default {

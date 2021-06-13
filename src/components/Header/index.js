@@ -10,6 +10,7 @@ import {
   fetchAuthenticationUser,
   fetchAuthUser,
   logOutUser,
+  fetchLogOut,
 } from '../../actions/authentication';
 import { connect } from 'react-redux';
 import { ErrorMessage, Field, FieldArray, Form, Formik } from 'formik';
@@ -26,6 +27,7 @@ class Header extends Component {
   state = {
     username: '',
     logout: true,
+    authdata: '',
   };
   //|| this.props.getUsersSuccess
 
@@ -42,7 +44,8 @@ class Header extends Component {
   }
 
   logOut = () => {
-    logOutUser();
+    // logOutUser();
+    this.props.fetchLogOut();
     this.setState({
       logout: false,
     });
@@ -200,8 +203,8 @@ class Header extends Component {
                         favoritegame: '',
                       }}
                       onSubmit={(values) => {
-                        console.log('Register in', values);
                         this.props.createUser(values);
+                        this.notify('Successfully registered');
                       }}
                       validationSchema={Yup.object().shape({
                         firstname: Yup.string()
@@ -405,6 +408,7 @@ class Header extends Component {
         username: localStorage.getItem('username-mande-gaming'),
       });
     }
+
     this.props.fetchAuthUser();
   }
 
@@ -413,16 +417,33 @@ class Header extends Component {
       prevProps.setAuthenticationSuccess !== this.props.setAuthenticationSuccess
     ) {
       this.notify('Successfully logged in');
+      localStorage.removeItem('username-mande-gaming');
     }
     if (prevProps.authentication !== this.props.authentication) {
       this.props.fetchAuthUser();
     }
+    // if (prevProps.auth !== this.props.auth) {
+    //   this.setState({
+    //     authdata: this.props.auth,
+    //   });
+    // }
+    // if (prevState.token !== this.state.token) {
+    //   alert('no token');
+    // }
   }
 
   render() {
     // console.log('users: ', this.props.users);
     // console.log('auth data: ', this.props.authentication);
-    console.log('auth data: ', this.props.auth);
+    // console.log(
+    //   'auth data state: ',
+    //   this.state.authdata
+    //     ? this.state.authdata.user
+    //       ? this.state.authdata.user.email
+    //       : null
+    //     : null
+    // );
+    console.log('state.auth', this.props.auth);
     return (
       <>
         {this.popUpRegiser()}
@@ -452,6 +473,13 @@ class Header extends Component {
               </Link>
             </h1>
           </div>
+          <h1 style={{ color: 'white' }}>
+            {this.props.auth
+              ? this.props.auth.user
+                ? this.props.auth.user.email
+                : null
+              : null}
+          </h1>
         </div>
       </>
     );
@@ -480,6 +508,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   fetchAuthUser: () => {
     dispatch(fetchAuthUser());
+  },
+  fetchLogOut: () => {
+    dispatch(fetchLogOut());
   },
 });
 

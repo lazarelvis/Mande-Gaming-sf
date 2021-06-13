@@ -50,10 +50,28 @@ const initialState = {
   updateScoreSuccess: false,
   updateScoreFailure: false,
   setUpdateScore: null,
+
+  logOut: [],
+  logOutSuccess: false,
+  logOutFailure: false,
+  setLogOutFailure: null,
 };
 // eslint-disable-next-line
 export default (state = initialState, action) => {
   switch (action.type) {
+    case t.SET_AUTH_LOG_OUT_SUCCESS:
+      return Object.assign({}, state, {
+        auth: null,
+        logOutSuccess: true,
+        logOutFailure: false,
+      });
+    case t.SET_AUTH_LOG_OUT_FAILURE:
+      return Object.assign({}, state, {
+        logOut: null,
+        logOutSuccess: false,
+        logOutFailure: true,
+        setLogOutFailure: action.data,
+      });
     case t.SET_AUTHENTICATION_SUCCESS:
       return Object.assign({}, state, {
         authentication: action.data,
