@@ -472,13 +472,6 @@ class Header extends Component {
               </Link>
             </h1>
           </div>
-          <h1 style={{ color: "white" }}>
-            {this.props.auth
-              ? this.props.auth.user
-                ? this.props.auth.user.email
-                : null
-              : null}
-          </h1>
         </div>
 
         {this.ShowUsername()}
