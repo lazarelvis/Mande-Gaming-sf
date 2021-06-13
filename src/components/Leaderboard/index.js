@@ -45,7 +45,7 @@ const LeaderBoard = ({ score, fetchScores }) => {
           .slice(0, 10)
           .map((item, i) => (
             <Row
-              number={counter++}
+              number={i + 1}
               nume={item.utilizator}
               joc={item.joc}
               scor={item.score11}
