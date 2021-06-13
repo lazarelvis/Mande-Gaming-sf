@@ -1,4 +1,4 @@
-import * as t from './actionTypes';
+import * as t from "./actionTypes";
 
 const initialState = {
   users: [],
@@ -50,6 +50,11 @@ const initialState = {
   updateScoreSuccess: false,
   updateScoreFailure: false,
   setUpdateScore: null,
+
+  updatePointsUser: [],
+  updatePointsUserSuccess: false,
+  updatePointsUserFailure: false,
+  setupdatePointsUser: null,
 };
 // eslint-disable-next-line
 export default (state = initialState, action) => {
@@ -184,6 +189,19 @@ export default (state = initialState, action) => {
         createScoreSuccess: false,
         createScoreFailure: true,
         scoreFailure: action.data,
+      });
+    case t.UPDATE_POINTS_USER_SUCCESS:
+      return Object.assign({}, state, {
+        updatePointsUser: action.data,
+        updatePointsUserSuccess: true,
+        updatePointsUserFailure: false,
+      });
+    case t.UPDATE_POINTS_USER_FAILURE:
+      return Object.assign({}, state, {
+        updatePointsUser: null,
+        updatePointsUserSuccess: false,
+        updatePointsUserFailure: true,
+        setupdatePointsUser: action.data,
       });
     default:
       return state;

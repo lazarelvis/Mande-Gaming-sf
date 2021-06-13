@@ -1,5 +1,5 @@
-import * as t from '../actionTypes';
-import usersServiceApi from '../services/user';
+import * as t from "../actionTypes";
+import usersServiceApi from "../services/user";
 
 //get users
 function receiveUsers(json) {
@@ -50,5 +50,30 @@ export const createUser = (data) => (dispatch, getState) => {
     })
     .catch((error) => {
       dispatch(setUserError(error));
+    });
+};
+
+function setUserPoints(json) {
+  return {
+    type: t.UPDATE_POINTS_USER_SUCCESS,
+    data: json,
+  };
+}
+
+function setUserPointsError(error) {
+  return {
+    type: t.UPDATE_POINTS_USER_FAILURE,
+    error,
+  };
+}
+
+export const setUserPoint = (id, data) => (dispatch, getState) => {
+  return usersServiceApi
+    .patch(id, data)
+    .then((json) => {
+      dispatch(setUserPoints(json));
+    })
+    .catch((error) => {
+      dispatch(setUserPointsError(error));
     });
 };

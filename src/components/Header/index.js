@@ -198,6 +198,8 @@ class Header extends Component {
                         email: "",
                         password: "",
                         favoritegame: "",
+                        onlineGames: [],
+                        puncte: 0,
                       }}
                       onSubmit={(values) => {
                         console.log("Register in", values);

@@ -24,8 +24,9 @@
 }
 
 .card-game button {
-  font-family: 'Bitsumishi';
+  font-family: "Bitsumishi";
   font-size: 20px;
+  cursor: pointer;
   position: absolute;
   bottom: -10px;
   left: 0;
@@ -39,7 +40,7 @@
 }
 
 .card-game:hover button {
-  /* bottom: 5px; */
+  bottom: 5px;
   background-image: linear-gradient(to right, #c9293d, #fd334c);
 }
 
@@ -79,4 +80,17 @@
 
 .loader-page {
   text-align: center;
+}
+.unlockGameModal button {
+  margin-top: 50px !important;
+  margin-left: 15px !important;
+  margin-right: 15px !important;
+  width: 30% !important;
+}
+.lock img {
+  position: absolute;
+  width: 20%;
+  top: 37%;
+  padding-bottom: 8px;
+  left: 40%;
 }
