@@ -1,39 +1,39 @@
-import React, { Component } from 'react';
-import './css/style.css';
-import './css/styleModal.css';
-import { Link } from 'react-router-dom';
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
-import '../utils/css/style.css';
-import { fetchAllUsers, createUser } from '../../actions/user';
+import React, { Component } from "react";
+import "./css/style.css";
+import "./css/styleModal.css";
+import { Link } from "react-router-dom";
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
+import "../utils/css/style.css";
+import { fetchAllUsers, createUser } from "../../actions/user";
 import {
   fetchAuthenticationUser,
   fetchAuthUser,
   logOutUser,
   fetchLogOut,
-} from '../../actions/authentication';
-import { connect } from 'react-redux';
-import { ErrorMessage, Field, FieldArray, Form, Formik } from 'formik';
-import * as Yup from 'yup';
+} from "../../actions/authentication";
+import { connect } from "react-redux";
+import { ErrorMessage, Field, FieldArray, Form, Formik } from "formik";
+import * as Yup from "yup";
 
-import { injectStyle } from 'react-toastify/dist/inject-style';
-import { ToastContainer, toast } from 'react-toastify';
+import { injectStyle } from "react-toastify/dist/inject-style";
+import { ToastContainer, toast } from "react-toastify";
 
-if (typeof window !== 'undefined') {
+if (typeof window !== "undefined") {
   injectStyle();
 }
 
 class Header extends Component {
   state = {
-    username: '',
+    username: "",
     logout: true,
-    authdata: '',
+    authdata: "",
   };
   //|| this.props.getUsersSuccess
 
   notify(text) {
     toast(`${text}`, {
-      position: 'top-center',
+      position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
@@ -87,20 +87,20 @@ class Header extends Component {
               </div>
               <Formik
                 initialValues={{
-                  strategy: 'local',
-                  email: '',
-                  password: '',
+                  strategy: "local",
+                  email: "",
+                  password: "",
                 }}
                 onSubmit={(values) => {
-                  console.log('Logging data:', values);
+                  console.log("Logging data:", values);
                   this.props.fetchAuthenticationUser(values);
                   this.setState({
                     logout: true,
                   });
                 }}
                 validationSchema={Yup.object().shape({
-                  email: Yup.string().email().required('Email required'),
-                  password: Yup.string().required('No password provided.'),
+                  email: Yup.string().email().required("Email required"),
+                  password: Yup.string().required("No password provided."),
                 })}
               >
                 {(props) => {
@@ -127,7 +127,7 @@ class Header extends Component {
                             value={values.email}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            className={errors.email && touched.email && 'error'}
+                            className={errors.email && touched.email && "error"}
                           />
                           {errors.email && touched.email && (
                             <div className="input-feedback">{errors.email}</div>
@@ -145,7 +145,7 @@ class Header extends Component {
                             onChange={handleChange}
                             onBlur={handleBlur}
                             className={
-                              errors.password && touched.password && 'error'
+                              errors.password && touched.password && "error"
                             }
                           />
                           {errors.password && touched.password && (
@@ -196,32 +196,32 @@ class Header extends Component {
                     </div>
                     <Formik
                       initialValues={{
-                        firstname: '',
-                        lastname: '',
-                        email: '',
-                        password: '',
-                        favoritegame: '',
+                        firstname: "",
+                        lastname: "",
+                        email: "",
+                        password: "",
+                        favoritegame: "",
                         onlineGames: [],
                         puncte: 0,
                       }}
                       onSubmit={(values) => {
-                        console.log('Register in', values);
+                        console.log("Register in", values);
                         this.props.createUser(values);
-                        this.notify('Successfully registered');
+                        this.notify("Successfully registered");
                       }}
                       validationSchema={Yup.object().shape({
                         firstname: Yup.string()
                           .max(255)
-                          .required('First name required'),
+                          .required("First name required"),
                         lastname: Yup.string()
                           .max(255)
-                          .required('Last name required'),
-                        email: Yup.string().email().required('Email required'),
+                          .required("Last name required"),
+                        email: Yup.string().email().required("Email required"),
                         password: Yup.string()
-                          .required('No password provided.')
+                          .required("No password provided.")
                           .min(
                             8,
-                            'Password is too short - should be 8 chars minimum.'
+                            "Password is too short - should be 8 chars minimum."
                           ),
                         favoritegame: Yup.string().max(255),
                       })}
@@ -256,7 +256,7 @@ class Header extends Component {
                                   className={
                                     errors.firstname &&
                                     touched.firstname &&
-                                    'error'
+                                    "error"
                                   }
                                 />
                                 {errors.firstname && touched.firstname && (
@@ -283,7 +283,7 @@ class Header extends Component {
                                   className={
                                     errors.lastname &&
                                     touched.lastname &&
-                                    'error'
+                                    "error"
                                   }
                                 />
                                 {errors.lastname && touched.lastname && (
@@ -305,7 +305,7 @@ class Header extends Component {
                                   onChange={handleChange}
                                   onBlur={handleBlur}
                                   className={
-                                    errors.email && touched.email && 'error'
+                                    errors.email && touched.email && "error"
                                   }
                                 />
                                 {errors.email && touched.email && (
@@ -328,7 +328,7 @@ class Header extends Component {
                                   className={
                                     errors.password &&
                                     touched.password &&
-                                    'error'
+                                    "error"
                                   }
                                 />
                                 {errors.password && touched.password && (
@@ -355,7 +355,7 @@ class Header extends Component {
                                   className={
                                     errors.favoritegame &&
                                     touched.favoritegame &&
-                                    'error'
+                                    "error"
                                   }
                                 />
                                 {errors.favoritegame &&
@@ -401,14 +401,14 @@ class Header extends Component {
   );
 
   componentDidMount() {
-    if (localStorage.getItem('username-mande-gaming') == undefined) {
+    if (localStorage.getItem("username-mande-gaming") == undefined) {
       this.setState({
-        username: '',
+        username: "",
       });
     }
-    if (localStorage.getItem('username-mande-gaming') != undefined) {
+    if (localStorage.getItem("username-mande-gaming") != undefined) {
       this.setState({
-        username: localStorage.getItem('username-mande-gaming'),
+        username: localStorage.getItem("username-mande-gaming"),
       });
     }
 
@@ -419,8 +419,8 @@ class Header extends Component {
     if (
       prevProps.setAuthenticationSuccess !== this.props.setAuthenticationSuccess
     ) {
-      this.notify('Successfully logged in');
-      localStorage.removeItem('username-mande-gaming');
+      this.notify("Successfully logged in");
+      localStorage.removeItem("username-mande-gaming");
     }
     if (prevProps.authentication !== this.props.authentication) {
       this.props.fetchAuthUser();
@@ -434,11 +434,19 @@ class Header extends Component {
     //   alert('no token');
     // }
   }
-
+  ShowUsername() {
+    if (localStorage.getItem("username-mande-gaming") != undefined) {
+      return (
+        <div className="unservane_header">
+          <p>{this.state.username}</p>
+        </div>
+      );
+    }
+  }
   render() {
     // console.log('users: ', this.props.users);
     // console.log('auth data: ', this.props.authentication);
-    console.log('auth data: ', this.props.auth);
+    console.log("auth data: ", this.props.auth);
     return (
       <>
         {this.popUpRegiser()}
@@ -464,7 +472,7 @@ class Header extends Component {
               </Link>
             </h1>
           </div>
-          <h1 style={{ color: 'white' }}>
+          <h1 style={{ color: "white" }}>
             {this.props.auth
               ? this.props.auth.user
                 ? this.props.auth.user.email
@@ -472,9 +480,8 @@ class Header extends Component {
               : null}
           </h1>
         </div>
-        <div className="unservane_header">
-          <p>{this.state.username}</p>
-        </div>
+
+        {this.ShowUsername()}
       </>
     );
   }
