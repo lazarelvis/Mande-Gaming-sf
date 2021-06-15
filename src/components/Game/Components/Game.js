@@ -299,7 +299,7 @@ const Game = ({
         {localStorage.getItem('username-mande-gaming')}
       </h1>
       <div className="box-game">
-        <div style={{ width: '1200px', height: '800px', margin: '0 auto' }}>
+        <div style={{ width: '1400px', height: '800px', margin: '0 auto' }}>
           {/* <Unity unityContext={unityContext} /> */}
           {ShowGame(isUnity)}
         </div>
