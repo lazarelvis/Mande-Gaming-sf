@@ -5,12 +5,11 @@ import { useSelector } from 'react-redux';
 import Modal from 'react-modal';
 import { connect } from 'react-redux';
 import { setUserPoint, fetchAllUsers } from '../../../actions/user';
-
+import isEmpty from 'lodash/isEmpty';
 // import { Link } from 'react-router-dom';
 
 const GameCard = (props, { updateuserpointgame, Getallusers }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
-  const [points, setPoints] = useState(0);
   const auth = useSelector((state) => state.auth);
 
   function openModal() {
@@ -35,7 +34,6 @@ const GameCard = (props, { updateuserpointgame, Getallusers }) => {
         : '0'
       : '0'
     : '0';
-
   const UnlockGame = (NewPoint, name) => {
     if (NewPoint < 0) {
       alert('Sorry but you do not have enght points to unlock ' + name);
@@ -51,16 +49,13 @@ const GameCard = (props, { updateuserpointgame, Getallusers }) => {
       );
       const newList = Jocuri.filter((x) => x !== null);
       newList.push(name);
-      console.log('auth in lock games: ', auth);
       let arr = auth.user.onlineGames;
       const AddOnlineGameData = {
         puncte: NewPoint,
         onlineGames: newList,
       };
-      arr.push(newList);
-      setPoints(NewPoint);
-      console.log('NewPoint: ', NewPoint);
-      // props.updateuserpointgame(UserId, AddOnlineGameData);
+      arr.push(name);
+      props.updateuserpointgame(UserId, AddOnlineGameData);
       closeModal();
     }
   };
@@ -77,19 +72,9 @@ const GameCard = (props, { updateuserpointgame, Getallusers }) => {
           : null
       );
     }
+
     const newList = Jocuri.filter((x) => x !== null);
-    for (i = 0; i < 4; i++) {
-      if (nume === newList[i] && isunity === false) {
-        return (
-          <>
-            <a href={`/game/${nume}`}>
-              <button type="button">Play Game</button>
-            </a>
-          </>
-        );
-      }
-    }
-    if (isunity === false && nume !== newList[i]) {
+    if (auth === null && isunity === false) {
       return (
         <>
           <div className="lock">
@@ -100,18 +85,46 @@ const GameCard = (props, { updateuserpointgame, Getallusers }) => {
           </button>
         </>
       );
-    }
-    if (isunity === true) {
-      return (
-        <>
-          <a href={`/game/${nume}`}>
-            <button type="button">Play Game</button>
-          </a>
-        </>
-      );
+    } else if (auth !== null) {
+      let newArr = auth.user;
+      if (isEmpty(auth)) {
+        return <h1>Loading...</h1>;
+      }
+      for (i = 0; i < 4; i++) {
+        if (nume === auth.user.onlineGames[i] && isunity === false) {
+          return (
+            <>
+              <a href={`/game/${nume}`}>
+                <button type="button">Play Game</button>
+              </a>
+            </>
+          );
+        }
+      }
+      if (nume !== auth.user.onlineGames[i] && isunity === false) {
+        return (
+          <>
+            <div className="lock">
+              <img src={`/CardGamesImages/LOCK1.png`} />
+            </div>
+            <button onClick={openModal} type="button">
+              Unlock Game
+            </button>
+          </>
+        );
+      }
+      if (isunity === true) {
+        return (
+          <>
+            <a href={`/game/${nume}`}>
+              <button type="button">Play Game</button>
+            </a>
+          </>
+        );
+      }
     }
   };
-  console.log('points', points);
+
   return (
     <div className="card-game">
       {ShowLock(props.nume, props.unity)}
@@ -129,6 +142,7 @@ const GameCard = (props, { updateuserpointgame, Getallusers }) => {
       <div>
         <Modal
           isOpen={modalIsOpen}
+          ariaHideApp={false}
           onRequestClose={closeModal}
           contentLabel="Unlock Game"
         >
@@ -136,7 +150,7 @@ const GameCard = (props, { updateuserpointgame, Getallusers }) => {
             <h1>Hold up !</h1>
             <h2>In order to play {props.nume} you need to unlock-it first !</h2>
             <h2>The game require {props.puncte} points.</h2>
-            <h2>Now you have {points} points</h2>
+            <h2>Now you have {UserPoits} points</h2>
             <h2>
               If you unlock this game you will have {UserPoits - props.puncte}{' '}
               points.

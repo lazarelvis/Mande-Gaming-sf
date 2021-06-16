@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
-import "./css/style.css";
-import GameCard from "./game-card";
-import { connect } from "react-redux";
-import { setUserPoint } from "../../../actions/user";
+import React, { useEffect, useState } from 'react';
+import './css/style.css';
+import GameCard from './game-card';
+import { connect } from 'react-redux';
+import { setUserPoint } from '../../../actions/user';
 
 const GameList = ({ fetchGames, games, users }) => {
+  console.log('users.');
   useEffect(() => {
     fetchGames();
   }, []);
@@ -22,7 +23,6 @@ const GameList = ({ fetchGames, games, users }) => {
           />
         ))
       : null;
-  console.log("games");
 
   return (
     <>
