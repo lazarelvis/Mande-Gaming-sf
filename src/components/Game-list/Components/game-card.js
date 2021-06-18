@@ -85,6 +85,14 @@ const GameCard = (props, { updateuserpointgame, Getallusers }) => {
           </button>
         </>
       );
+    } else if (isunity === true) {
+      return (
+        <>
+          <a href={`/game/${nume}`}>
+            <button type="button">Play Game</button>
+          </a>
+        </>
+      );
     } else if (auth !== null) {
       let newArr = auth.user;
       if (isEmpty(auth)) {

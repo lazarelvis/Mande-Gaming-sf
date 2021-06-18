@@ -372,6 +372,7 @@ class Header extends Component {
                                   type="submit"
                                   disabled={isSubmitting}
                                 >
+                                  {close}
                                   Register
                                 </button>
                               </div>
