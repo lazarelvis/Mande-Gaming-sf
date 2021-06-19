@@ -175,13 +175,11 @@ const Game = ({
                   );
                   // console.log(scoreByUsername[0].score, scoreByUsername[0]._id);
                   updateScoreData(scoreByUsername[0]._id, scoreByUsername[0]);
-                  updateuserpointgame(UserId, AddOnlineGameData);
                   console.log("datept update", UserId, AddOnlineGameData);
                 }
                 executed = true;
               } else if (game.score >= score) {
                 notify(`🦄 Wow try harder maybe you can get a highscore 🔥`);
-                updateuserpointgame(UserId, AddOnlineGameData);
                 console.log("datept update", UserId, AddOnlineGameData);
                 executed = true;
               }
@@ -200,8 +198,6 @@ const Game = ({
           scoreByUsername[0].score = arr;
           // console.log('arr2:', scoreByUsername[0]);
           updateScoreData(scoreByUsername[0]._id, scoreByUsername[0]);
-          updateuserpointgame(UserId, AddOnlineGameData);
-          console.log("datept update", UserId, AddOnlineGameData);
           notify(`🦄 You got a nice score for ${newScore.name} 🔥`);
         }
       }
@@ -235,6 +231,9 @@ const Game = ({
                   );
                   // console.log(scoreByUsername[0].score, scoreByUsername[0]._id);
                   updateScoreData(scoreByUsername[0]._id, scoreByUsername[0]);
+                  let arr1 = auth.user.puncte;
+                  arr1 = UserPuncte + score;
+                  auth.user.puncte = arr1;
                   updateuserpointgame(UserId, AddOnlineGameData);
                   console.log("datept update", UserId, AddOnlineGameData);
                 }
@@ -242,6 +241,9 @@ const Game = ({
               } else if (game.score >= score) {
                 notify(`🦄 Wow try harder maybe you can get a highscore 🔥`);
                 updateuserpointgame(UserId, AddOnlineGameData);
+                let arr1 = auth.user.puncte;
+                arr1 = UserPuncte + score;
+                auth.user.puncte = arr1;
                 console.log("datept update", UserId, AddOnlineGameData);
                 executed = true;
               }
@@ -261,6 +263,9 @@ const Game = ({
           // console.log('arr2:', scoreByUsername[0]);
           updateScoreData(scoreByUsername[0]._id, scoreByUsername[0]);
           notify(`🦄 You got a nice score for ${newScore.name} 🔥`);
+          let arr1 = auth.user.puncte;
+          arr1 = UserPuncte + score;
+          auth.user.puncte = arr1;
           updateuserpointgame(UserId, AddOnlineGameData);
           console.log("datept update", UserId, AddOnlineGameData);
         }
