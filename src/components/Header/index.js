@@ -466,7 +466,9 @@ class Header extends Component {
         <div className="navbar">
           <ul>
             <li>
-              <Link to="/leaderboard">Leaderboard</Link>
+              <Link to="/leaderboard" className="nav-link">
+                Leaderboard
+              </Link>
             </li>
             <li>
               <Link to="/game-list">Gaming</Link>

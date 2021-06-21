@@ -1,13 +1,13 @@
 @font-face {
   src: url(../../../Resources/fonts/Poppins-SemiBold.ttf);
-  font-family: "Poppins-SemiBold";
+  font-family: 'Poppins-SemiBold';
 }
 
 .logo h1 {
   margin: 12px 0 0 100px;
   color: white;
   font-size: 55px;
-  font-family: "Poppins-SemiBold";
+  font-family: 'Poppins-SemiBold';
 }
 
 .logo h1 a {
@@ -108,3 +108,7 @@
   cursor: pointer;
   border: none;
 }
+
+/* .nav-link {
+  border-bottom: 3px solid #fd334c;
+} */

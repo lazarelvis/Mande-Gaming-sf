@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
-import Row from "./row";
-import HeadRow from "./headrow";
-import { fetchAllScore } from "../../actions/score";
-import { connect } from "react-redux";
+import React, { useEffect } from 'react';
+import Row from './row';
+import HeadRow from './headrow';
+import { fetchAllScore } from '../../actions/score';
+import { connect } from 'react-redux';
+import Bounce from 'react-reveal/Bounce';
+import Fade from 'react-reveal/Fade';
 
-import "./css/style.css";
-import score from "../../services/score";
+import './css/style.css';
+import score from '../../services/score';
 let counter = 1;
 const LeaderBoard = ({ score, fetchScores }) => {
   useEffect(() => {
@@ -44,21 +46,27 @@ const LeaderBoard = ({ score, fetchScores }) => {
           .sort(compare)
           .slice(0, 10)
           .map((item, i) => (
-            <Row
-              number={i + 1}
-              nume={item.utilizator}
-              joc={item.joc}
-              scor={item.score11}
-            />
+            <div>
+              <Row
+                number={i + 1}
+                nume={item.utilizator}
+                joc={item.joc}
+                scor={item.score11}
+              />
+            </div>
           ))
       : null;
 
   return (
     <>
-      <div style={{ display: "none" }}>{Show()}</div>
+      <div style={{ display: 'none' }}>{Show()}</div>
       <table id="table">
-        <HeadRow />
-        <tbody>{Afisare()}</tbody>
+        <Fade top>
+          <HeadRow />
+        </Fade>
+        <Bounce top cascade>
+          <tbody>{Afisare()}</tbody>
+        </Bounce>
       </table>
     </>
   );
