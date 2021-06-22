@@ -19,6 +19,7 @@ import * as Yup from 'yup';
 import { injectStyle } from 'react-toastify/dist/inject-style';
 import { ToastContainer, toast } from 'react-toastify';
 import isEmpty from 'lodash/isEmpty';
+import { NavLink } from 'react-router-dom';
 
 if (typeof window !== 'undefined') {
   injectStyle();
@@ -466,15 +467,19 @@ class Header extends Component {
         <div className="navbar">
           <ul>
             <li>
-              <Link to="/leaderboard" className="nav-link">
+              <NavLink exact to="/leaderboard" className="nav-link">
                 Leaderboard
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/game-list">Gaming</Link>
+              <NavLink exact to="/game-list" className="nav-link">
+                Gaming
+              </NavLink>
             </li>
             <li>
-              <Link to="/">Home</Link>
+              <NavLink exact to="/" className="nav-link">
+                Home
+              </NavLink>
             </li>
           </ul>
         </div>
