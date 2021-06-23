@@ -40,7 +40,8 @@
 }
 
 .card-game:hover button {
-  bottom: 5px;
+  z-index: 10;
+  bottom: -10px;
   background-image: linear-gradient(to right, #c9293d, #fd334c);
 }
 
