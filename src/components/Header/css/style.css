@@ -109,6 +109,10 @@
   border: none;
 }
 
-/* .nav-link {
+.nav-link:hover {
+  color: #fd334c;
+}
+
+.active {
   border-bottom: 3px solid #fd334c;
-} */
+}
