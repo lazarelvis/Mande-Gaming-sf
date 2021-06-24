@@ -316,11 +316,13 @@ const Game = ({
             contentLabel="Example Modal"
           >
             <h1>Hold up !</h1>
-            <h2>If you wanna play any game on this platform</h2>
-            <h2>you need to log in first</h2>
+            <h2>
+              If you wanna play any game on this platform<br></br>
+              you need to log in first
+            </h2>
             <button onClick={generateUserNmae}>Play as Guest</button>
             <Link to="/">
-              <button style={{ marginTop: '20px', width: '20%' }}>
+              <button style={{ marginTop: '20px', width: '30%' }}>
                 Log in
               </button>
             </Link>

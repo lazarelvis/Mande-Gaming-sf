@@ -212,3 +212,88 @@ canvas {
     height: 700px;
   }
 }
+@media only screen and (max-width: 1300px) {
+  .ReactModal__Content--after-open {
+    padding-top: 20px !important;
+    font-size: 15px;
+    inset: 100px 340px !important;
+  }
+  .ReactModal__Content--after-open h1 {
+    margin-bottom: 40px;
+  }
+  .ReactModal__Content--after-open button {
+    font-size: 1rem;
+    margin: 40px 10px;
+    width: 40%;
+  }
+}
+@media (max-width: 1500px) and (min-width: 1301px) {
+  .ReactModal__Content--after-open {
+    padding-top: 20px !important;
+    font-size: 18px;
+  }
+  .ReactModal__Content--after-open h1 {
+    margin-bottom: 40px;
+  }
+  .ReactModal__Content--after-open button {
+    font-size: 1.4rem;
+    margin: 40px 40px;
+    width: 50%;
+  }
+}
+
+@media (max-width: 1750px) and (min-width: 1601px) {
+  .ReactModal__Content--after-open {
+    padding-top: 70px !important;
+    font-size: 23px;
+  }
+  .ReactModal__Content--after-open h1 {
+    margin-bottom: 40px;
+  }
+  .ReactModal__Content--after-open h2 {
+    margin-bottom: 30px;
+  }
+  .ReactModal__Content--after-open button {
+    font-size: 1.7rem;
+    margin: 40px 80px;
+    width: 40%;
+  }
+}
+
+@media (max-width: 1950px) and (min-width: 1751px) {
+  .ReactModal__Content--after-open {
+    padding-top: 70px !important;
+    font-size: 23px;
+  }
+  .ReactModal__Content--after-open h1 {
+    margin-bottom: 40px;
+  }
+  .ReactModal__Content--after-open h2 {
+    margin-bottom: 60px;
+  }
+  .ReactModal__Content--after-open button {
+    font-size: 1.7rem;
+    margin: 40px 80px;
+    width: 50%;
+    height: 8%;
+  }
+}
+@media only screen and (min-width: 1951px) {
+  .ReactModal__Content--after-open {
+    padding-top: 80px !important;
+    font-size: 25px;
+    inset: 80px 340px !important;
+  }
+  .ReactModal__Content--after-open h2 {
+    margin-bottom: 60px;
+  }
+  .ReactModal__Content--after-open h1 {
+    margin-bottom: 40px;
+  }
+  .ReactModal__Content--after-open button {
+    font-size: 2rem;
+    margin: 40px 120px;
+    width: 50%;
+    height: 8%;
+  }
+}
