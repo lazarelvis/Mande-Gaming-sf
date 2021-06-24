@@ -7,7 +7,6 @@ import Bounce from 'react-reveal/Bounce';
 import Fade from 'react-reveal/Fade';
 import Slide from 'react-reveal/Bounce';
 
-
 import './css/style.css';
 import score from '../../services/score';
 let counter = 1;
@@ -16,7 +15,7 @@ const LeaderBoard = ({ score, fetchScores }) => {
   useEffect(() => {
     fetchScores();
   }, []);
-  
+
   const scoruri = [];
   const Show = () =>
     score
@@ -42,19 +41,20 @@ const LeaderBoard = ({ score, fetchScores }) => {
     }
     return 0;
   }
- 
+
   const Afisare = () =>
     scoruri.sort(compare).slice(0, 10)
       ? scoruri
           .sort(compare)
           .slice(0, 10)
           .map((item, i) => (
-              <Row
-                number={i + 1}
-                nume={item.utilizator}
-                joc={item.joc}
-                scor={item.score11}
-              />
+            <Row
+              key={i}
+              number={i + 1}
+              nume={item.utilizator}
+              joc={item.joc}
+              scor={item.score11}
+            />
           ))
       : null;
 
@@ -62,10 +62,8 @@ const LeaderBoard = ({ score, fetchScores }) => {
     <>
       <div style={{ display: 'none' }}>{Show()}</div>
       <table id="table">
-          <HeadRow />
-          <tbody>
-            {Afisare()}
-          </tbody>
+        <HeadRow />
+        <tbody>{Afisare()}</tbody>
       </table>
     </>
   );
