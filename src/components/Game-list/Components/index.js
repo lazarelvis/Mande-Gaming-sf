@@ -7,7 +7,6 @@ import Zoom from 'react-reveal/Zoom';
 import Slide from 'react-reveal/Slide';
 
 const GameList = ({ fetchGames, games, users }) => {
-  console.log('users.');
   useEffect(() => {
     fetchGames();
   }, []);
@@ -17,7 +16,7 @@ const GameList = ({ fetchGames, games, users }) => {
       ? games.map((item, i) => {
           if (i <= 2) {
             return (
-              <Slide right>
+              <Slide right key={i}>
                 <GameCard
                   key={item._id}
                   nume={item.name}
@@ -30,7 +29,7 @@ const GameList = ({ fetchGames, games, users }) => {
             );
           } else if (i <= 5) {
             return (
-              <Slide left>
+              <Slide left key={i}>
                 <GameCard
                   key={item._id}
                   nume={item.name}
@@ -43,7 +42,7 @@ const GameList = ({ fetchGames, games, users }) => {
             );
           } else if (i <= 8) {
             return (
-              <Slide right>
+              <Slide right key={i}>
                 <GameCard
                   key={item._id}
                   nume={item.name}
