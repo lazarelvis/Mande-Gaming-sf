@@ -24,7 +24,7 @@
 }
 
 .card-game button {
-  font-family: 'Bitsumishi';
+  font-family: "Bitsumishi";
   font-size: 20px;
   cursor: pointer;
   position: absolute;
@@ -94,4 +94,87 @@
   top: 37%;
   padding-bottom: 8px;
   left: 40%;
+}
+
+@media only screen and (max-width: 1300px) {
+  .unlockGameModal h2 {
+    font-size: 17px !important;
+  }
+  .unlockGameModal h1 {
+    font-size: 25px !important;
+  }
+  .unlockGameModal button {
+    margin-top: 40px !important;
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+    width: 25% !important;
+  }
+}
+@media (max-width: 1500px) and (min-width: 1301px) {
+  .unlockGameModal h2 {
+    font-size: 20px !important;
+    margin-bottom: 10px !important;
+  }
+  .unlockGameModal h1 {
+    font-size: 30px !important;
+    margin-bottom: 70px !important;
+  }
+  .unlockGameModal button {
+    margin-top: 60px !important;
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+    width: 40% !important;
+  }
+}
+
+@media (max-width: 1750px) and (min-width: 1601px) {
+  .unlockGameModal h2 {
+    font-size: 27px !important;
+    margin-bottom: 10px !important;
+  }
+  .unlockGameModal h1 {
+    font-size: 40px !important;
+    margin-bottom: 70px !important;
+  }
+  .unlockGameModal button {
+    margin-top: 60px !important;
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+    width: 35% !important;
+  }
+}
+
+@media (max-width: 1950px) and (min-width: 1751px) {
+  .unlockGameModal h2 {
+    font-size: 35px !important;
+    margin-bottom: 20px !important;
+  }
+  .unlockGameModal h1 {
+    font-size: 50px !important;
+    margin-bottom: 70px !important;
+  }
+  .unlockGameModal button {
+    font-size: 35px !important;
+    margin-top: 60px !important;
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+    width: 30% !important;
+  }
+}
+@media only screen and (min-width: 1951px) {
+  .unlockGameModal h2 {
+    font-size: 35px !important;
+    margin-bottom: 20px !important;
+  }
+  .unlockGameModal h1 {
+    font-size: 50px !important;
+    margin-bottom: 70px !important;
+  }
+  .unlockGameModal button {
+    font-size: 35px !important;
+    margin-top: 60px !important;
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+    width: 30% !important;
+  }
 }
