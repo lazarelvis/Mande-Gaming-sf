@@ -1,0 +1,81 @@
+version: '3.3'
+services:
+  mande-gaming-sf:
+    container_name: mande-gaming-sf-frondend
+    restart: always
+    build:
+      context: ./Mande-Gaming-sf
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./Mande-Gaming-sf/src:/app/src
+  mande-gaming-api:
+    container_name: mande-gaming-api-backend
+    restart: always
+    build:
+      context: ./Mande-Gaming-api
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    volumes:
+      - ./Mande-Gaming-api/src:/app/src
+# services:
+#   mande:
+#     build:
+#       context: ./mande
+#       dockerfile: Dockerfile
+#     container_name: mandepage
+#     depends_on:
+#       - db
+#     volumes:
+#       - ./mande:/var/www/html
+#     ports:
+#       - 8000:80
+#   blogmande:
+#     build:
+#       context: ./blogmande
+#       dockerfile: Dockerfile
+#     container_name: blogmande-page
+#     depends_on:
+#       - db
+#     volumes:
+#       - ./blogmande:/var/www/html
+#     ports:
+#       - 8002:80
+#   shopmande:
+#     build:
+#       context: ./shopmande
+#       dockerfile: Dockerfile
+#     container_name: shopmande-page
+#     depends_on:
+#       - db
+#     volumes:
+#       - ./shopmande:/var/www/html
+#     ports:
+#       - 8001:80
+#   db:
+#     container_name: mysqldb
+#     image: mysql:8.0
+#     command: --default-authentication-plugin=mysql_native_password
+#     restart: always
+#     environment:
+#       MYSQL_ROOT_PASSWORD: galati98
+#       MYSQL_DATABASE: test_db
+#       MYSQL_USER: user1
+#       MYSQL_PASSWORD: galati98
+#     ports:
+#       - 6033:3306
+#     volumes:
+#       - ./init:/docker-entrypoint-initdb.d
+#   phpmyadmin:
+#     image: phpmyadmin/phpmyadmin
+#     restart: always
+#     container_name: phpmyadmin
+#     depends_on:
+#       - db
+#     ports:
+#       - 8005:80
+#     environment:
+#       PMA_HOST: db
+#       MYSQL_ROOT_PASSWORD: galati98
