@@ -94,7 +94,7 @@ class Header extends Component {
                   password: '',
                 }}
                 onSubmit={(values) => {
-                  console.log('Logging data:', values);
+                  // console.log('Logging data:', values);
                   this.props.fetchAuthenticationUser(values);
                   this.setState({
                     logout: true,
@@ -207,7 +207,7 @@ class Header extends Component {
                         puncte: 0,
                       }}
                       onSubmit={(values) => {
-                        console.log('Register in', values);
+                        // console.log('Register in', values);
                         this.props.createUser(values);
                         this.notify('Successfully registered');
                       }}

@@ -30,6 +30,7 @@ const Game = ({
   let username = UsernameGenerator.generateUsername(' ');
   const getAuthSuccess = useSelector((state) => state.getAuthSuccess);
   const auth = useSelector((state) => state.auth);
+  const [usernameLocalStorage, setUsernameLocalStorage] = useState('');
   const [user, setUser] = useState();
   const UserId = auth
     ? auth.user
@@ -69,6 +70,13 @@ const Game = ({
       setGameData(score);
     }
   }, []);
+
+  useEffect(() => {
+    if (localStorage.getItem('username-mande-gaming') != undefined) {
+      setUsernameLocalStorage(localStorage.getItem('username-mande-gaming'));
+      console.log('in use efect: ');
+    }
+  }, [localStorage.getItem('username-mande-gaming')]);
 
   newData.score = gameData;
   newData.username = localStorage.getItem('username-mande-gaming');
@@ -305,9 +313,19 @@ const Game = ({
   if (isEmpty(getAuthSuccess)) {
     console.log('loading');
   }
+
+  const ShowUsername = () => {
+    return (
+      <div className="unservane_header">
+        <p>{usernameLocalStorage}</p>
+      </div>
+    );
+  };
+  console.log('usernameLocalStorage', usernameLocalStorage);
   // console.log('username game: ', localStorage.getItem('username-mande-gaming'));
   return (
     <div>
+      {ShowUsername()}
       {!getAuthSuccess ? (
         <div>
           <Modal
