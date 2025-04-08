@@ -1,0 +1,397 @@
+[{
+    "_id": {
+      "$oid": "609ffbb70a88e032e01d180a"
+    },
+    "score": [
+      {
+        "name": "Maze Worrior",
+        "score": 27
+      },
+      {
+        "name": "Sheep It Up",
+        "score": 14
+      },
+      {
+        "name": "Awesome Zombie Crasher",
+        "score": 6
+      }
+    ],
+    "username": "rashness splintered",
+    "createdAt": {
+      "$date": "2021-05-15T16:49:59.674Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-15T16:49:59.674Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "60ad36f078383d25a44ea0ca"
+    },
+    "score": [
+      {
+        "name": "Awesome Zombie Crasher",
+        "score": 3
+      }
+    ],
+    "username": "gush hilly",
+    "createdAt": {
+      "$date": "2021-05-25T17:42:08.986Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-25T17:42:08.986Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "60ad376278383d25a44ea0cb"
+    },
+    "score": [
+      {
+        "name": "Awesome Zombie Crasher",
+        "score": 3
+      }
+    ],
+    "username": "yucca scandalous",
+    "createdAt": {
+      "$date": "2021-05-25T17:44:02.048Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-25T17:44:02.048Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "60ad393df0148d2e3cea2327"
+    },
+    "score": [
+      {
+        "name": "Sheep It Up",
+        "score": 12
+      },
+      {
+        "name": "Maze",
+        "score": 99
+      },
+      {
+        "name": "Awesome Zombie Crasher",
+        "score": 48
+      }
+    ],
+    "username": "steelworker dietary",
+    "createdAt": {
+      "$date": "2021-05-25T17:51:57.372Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-25T17:51:57.372Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "60ad59b305d0f54d686347aa"
+    },
+    "score": [
+      {
+        "name": "Awesome Zombie Crasher",
+        "score": 7
+      }
+    ],
+    "username": "lover pudgy",
+    "createdAt": {
+      "$date": "2021-05-25T20:10:27.703Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-25T20:10:27.703Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "60ad5b4705d0f54d6863512b"
+    },
+    "score": [
+      {
+        "name": "Awesome Zombie Crasher",
+        "score": 10
+      },
+      {
+        "name": "Maze Worrior",
+        "score": 10
+      }
+    ],
+    "username": "gebling southeastern",
+    "createdAt": {
+      "$date": "2021-05-25T20:17:11.307Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-25T20:17:11.307Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "60ae8ba2b5a29013943a4cc4"
+    },
+    "score": [
+      {
+        "name": "Maze Worrior",
+        "score": 40
+      },
+      {
+        "name": "Awesome Zombie Crasher",
+        "score": 31
+      }
+    ],
+    "username": "barkeep shrill",
+    "createdAt": {
+      "$date": "2021-05-26T17:55:46.407Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-26T17:55:46.407Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "60bf86a6d37d562d94d1abfe"
+    },
+    "score": [
+      {
+        "name": "Awesome Zombie Crasher",
+        "score": 19
+      },
+      {
+        "name": "Maze Worrior",
+        "score": 37
+      }
+    ],
+    "username": "Elvis Lazar",
+    "createdAt": {
+      "$date": "2021-06-08T15:03:02.148Z"
+    },
+    "updatedAt": {
+      "$date": "2021-06-08T15:03:02.148Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "60c22b2ec629b73f04b39a89"
+    },
+    "score": [
+      {
+        "name": "Awesome Zombie Crasher",
+        "score": 15
+      }
+    ],
+    "username": "fucker uninterrupted",
+    "createdAt": {
+      "$date": "2021-06-10T15:09:34.972Z"
+    },
+    "updatedAt": {
+      "$date": "2021-06-10T15:09:34.972Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "60c739cb66536e16d8fc0abc"
+    },
+    "score": [
+      {
+        "name": "Awesome Zombie Crasher",
+        "score": 5
+      }
+    ],
+    "username": "crap waxed",
+    "createdAt": {
+      "$date": "2021-06-14T11:13:15.353Z"
+    },
+    "updatedAt": {
+      "$date": "2021-06-14T11:13:15.353Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "60c884fc1068433214c0ae77"
+    },
+    "score": [
+      {
+        "name": "Sheep It Up",
+        "score": 11
+      },
+      {
+        "name": "Awesome Zombie Crasher",
+        "score": 132
+      },
+      {
+        "name": "Maze",
+        "score": 100
+      }
+    ],
+    "username": "Preotul  Kazoo",
+    "createdAt": {
+      "$date": "2021-06-15T10:46:20.882Z"
+    },
+    "updatedAt": {
+      "$date": "2021-06-15T10:46:20.882Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "60e389d7e53a7900126f538c"
+    },
+    "score": [
+      {
+        "name": "Maze Worrior",
+        "score": 55
+      }
+    ],
+    "username": "conga off-duty",
+    "createdAt": {
+      "$date": "2021-07-05T22:38:15.935Z"
+    },
+    "updatedAt": {
+      "$date": "2021-07-05T22:38:15.935Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "60e38a60e53a7900126f538e"
+    },
+    "score": [
+      {
+        "name": "Maze",
+        "score": 100
+      }
+    ],
+    "username": "showman futile",
+    "createdAt": {
+      "$date": "2021-07-05T22:40:32.080Z"
+    },
+    "updatedAt": {
+      "$date": "2021-07-05T22:40:32.080Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "60e3f943e53a7900126f5390"
+    },
+    "score": [
+      {
+        "name": "Maze",
+        "score": 100
+      }
+    ],
+    "username": "orchid amorphous",
+    "createdAt": {
+      "$date": "2021-07-06T06:33:39.993Z"
+    },
+    "updatedAt": {
+      "$date": "2021-07-06T06:33:39.993Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "617bac70b3a1670012bde189"
+    },
+    "score": [
+      {
+        "name": "Sheep It Up",
+        "score": 18
+      }
+    ],
+    "username": "computation sporty",
+    "createdAt": {
+      "$date": "2021-10-29T08:10:24.272Z"
+    },
+    "updatedAt": {
+      "$date": "2021-10-29T08:10:24.272Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "61c467e9b3a1670012bde18b"
+    },
+    "score": [
+      {
+        "name": "Maze Worrior",
+        "score": 40
+      }
+    ],
+    "username": "jest assorted",
+    "createdAt": {
+      "$date": "2021-12-23T12:13:29.245Z"
+    },
+    "updatedAt": {
+      "$date": "2021-12-23T12:13:29.245Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "61eb09b5b3a1670012bde18d"
+    },
+    "score": [
+      {
+        "name": "Maze",
+        "score": 100
+      }
+    ],
+    "username": "code coincidental",
+    "createdAt": {
+      "$date": "2022-01-21T19:29:58.026Z"
+    },
+    "updatedAt": {
+      "$date": "2022-01-21T19:29:58.026Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "62343516b3a1670012bde18f"
+    },
+    "score": [
+      {
+        "name": "Sheep It Up",
+        "score": 11
+      }
+    ],
+    "username": "pig geographical",
+    "createdAt": {
+      "$date": "2022-03-18T07:30:30.996Z"
+    },
+    "updatedAt": {
+      "$date": "2022-03-18T07:30:30.996Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "62b7170ab3a1670012bde192"
+    },
+    "score": [
+      {
+        "name": "Awesome Zombie Crasher",
+        "score": 9
+      }
+    ],
+    "username": "- -",
+    "createdAt": {
+      "$date": "2022-06-25T14:09:14.402Z"
+    },
+    "updatedAt": {
+      "$date": "2022-06-25T14:09:14.402Z"
+    },
+    "__v": 0
+  }]

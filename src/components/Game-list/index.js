@@ -1,13 +1,15 @@
-import { fetchAllGames } from '../../actions/games';
-import { fetchScoreByUsername } from '../../actions/score';
+import { fetchAllGames } from "../../actions/games";
+import { fetchScoreByUsername } from "../../actions/score";
 
-import { connect } from 'react-redux';
-import GameList from './Components/index';
+import { connect } from "react-redux";
+import GameList from "./Components/index";
+import gamesData from "../../data/games.json";
+import usersData from "../../data/users.json";
 
 const mapStateToProps = (state) => {
   return {
-    games: state.games,
-    users: state.users,
+    games: gamesData,
+    users: usersData,
     scoreByUsername: state.scoreByUsername,
   };
 };

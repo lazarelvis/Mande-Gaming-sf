@@ -1,14 +1,15 @@
-import React, { useEffect } from 'react';
-import Row from './row';
-import HeadRow from './headrow';
-import { fetchAllScore } from '../../actions/score';
-import { connect } from 'react-redux';
-import Bounce from 'react-reveal/Bounce';
-import Fade from 'react-reveal/Fade';
-import Slide from 'react-reveal/Bounce';
+import React, { useEffect } from "react";
+import Row from "./row";
+import HeadRow from "./headrow";
+import { fetchAllScore } from "../../actions/score";
+import { connect } from "react-redux";
+import Bounce from "react-reveal/Bounce";
+import Fade from "react-reveal/Fade";
+import Slide from "react-reveal/Bounce";
+import scoresData from "../../data/scores.json";
 
-import './css/style.css';
-import score from '../../services/score';
+import "./css/style.css";
+import score from "../../services/score";
 let counter = 1;
 
 const LeaderBoard = ({ score, fetchScores }) => {
@@ -60,7 +61,7 @@ const LeaderBoard = ({ score, fetchScores }) => {
 
   return (
     <>
-      <div style={{ display: 'none' }}>{Show()}</div>
+      <div style={{ display: "none" }}>{Show()}</div>
       <table id="table">
         <HeadRow />
         <tbody>{Afisare()}</tbody>
@@ -70,8 +71,10 @@ const LeaderBoard = ({ score, fetchScores }) => {
 };
 
 const mapStateToProps = (state) => {
+  console.log(scoresData);
+
   return {
-    score: state.score,
+    score: scoresData,
   };
 };
 
